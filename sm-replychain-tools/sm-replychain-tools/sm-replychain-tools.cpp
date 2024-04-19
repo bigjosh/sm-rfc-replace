@@ -1,6 +1,8 @@
 // sm-replychain-tools.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <windows.h>
+
 #include <iostream>
 #include <cstdio>
 #include <cstring>
@@ -10,6 +12,7 @@
 #include <fstream>
 
 #include <errno.h>
+#include <regex>
 
 // Function to calculate the hash value of a string using DJB2 algorithm
 std::string MakeHash(const std::string& txt) {
@@ -22,9 +25,12 @@ std::string MakeHash(const std::string& txt) {
     }
 
     std::stringstream ss;
-    ss << std::hex << std::setw(5) << std::setfill('0') << hash; // Convert hash to hexadecimal string
+    ss << std::hex << std::setw(5) << std::setfill('0') <<std::uppercase << hash; // Convert hash to hexadecimal string
     return ss.str();
 }
+
+
+
 
 // Function to generate a hashed email address
 std::string MakeHashedAddress(const std::string& toaddress) {
@@ -239,7 +245,9 @@ void processEmailFile(const char* filePath, const char* searchString, const char
 }
 
 
-int quickCheckMatch(const char* filePath , const) {
+// Creates a new processed file. 
+
+int processFile(const char* filePath , const char *newFile , const char * magicReplytoAddress, const char *replacementAddressFmtStr) {
 
     // Open a file stream to read from a file named "email.txt"
     std::ifstream file(filePath);
@@ -284,6 +292,109 @@ int quickCheckMatch(const char* filePath , const) {
 */
 
 
+// Function to transform EML file based on specified conditions. Mostly written by ChatGPT!
+
+// Placeholder for a hash function
+const char* hash() {
+    static std::string hashValue = "12345abcd";  // Example hash value
+    return hashValue.c_str();
+}
+
+
+// Function to transform EML file based on specified conditions
+void transformEMLFile(const char* filePath, 
+    const char* magicReplytoEmailAddress, const char* newEmailAddressFmtString) {
+    std::ifstream inFile(filePath);  // Open the original file for reading
+    if (!inFile.is_open()) {
+        std::cerr << "Error opening input file." << std::endl;
+        return;
+    }
+
+    const char * tempFilePath = ( std::string( filePath ) + ".tmp" ).c_str();
+
+    std::ofstream outFile(tempFilePath); // Create a new file for writing
+    if (!outFile.is_open()) {
+        std::cerr << "Error opening output file." << std::endl;
+        inFile.close();  // Make sure to close the input file before exiting
+        return;
+    }
+
+    std::string line;
+    std::regex replyToRegex(R"(^Reply-To:\s*.*)" + std::string(magicReplytoEmailAddress));
+
+
+    // Read line by line from the old file
+    while (std::getline(inFile, line)) {
+
+        // We could use an iterator here and it would be slightly more efficient, but we are only working with a single line here so who cares.
+        // Also note that we quickly prescreen every file to make sure it does have a matching reply-to before we ever get here,
+        // so no chance that this will end up regexing over the whole body. 
+
+        std::smatch matches;
+        if (std::regex_search(line, matches, replyToRegex)) {
+            // If the line contains the magic email address, replace it
+            std::string newEmail = std::string(newEmailAddressFmtString);
+
+            // How can c++ not have a findAndReplce?
+            size_t pos = newEmail.find("%s");
+            if (pos != std::string::npos) {
+                newEmail.replace(pos, 2, MakeHash("bigjosh@gmail.com")); // Replace %s with the return value of the hash
+            }
+            line = "Reply-To: " + newEmail; // Update the line with the new email
+
+            outFile << line << std::endl; // Write the line to the new file
+
+            break;          // Only do it one time. 
+
+        } else {
+            outFile << line << std::endl; // Write the line to the new file
+        }
+    }
+
+    // Now quickly process the rest of the file without any more checks or regexes
+
+    // Read line by line from the old file
+    while (std::getline(inFile, line)) {
+        outFile << line << std::endl; // Write the line to the new file
+    }
+
+    inFile.close();
+    outFile.close();
+
+    // Delete the orginal file
+    int deleteErr = remove( filePath );
+
+    if (deleteErr) {
+        std::cerr << "Failed to delete file. Error: " << GetLastError() << std::endl;
+        return;
+    }
+
+    // Delete the orginal file
+    int moveErr = rename( tempFilePath , filePath);
+
+    if (deleteErr) {
+        std::cerr << "Failed to delete file. Error: " << GetLastError() << std::endl;
+        return;
+    }
+
+}
+
+/*
+auto words_begin =
+    std::sregex_iterator(s.begin(), s.end(), number_regex);
+auto words_end = std::sregex_iterator();
+
+std::cout << "Found "
+          << std::distance(words_begin, words_end)
+          << " numbers:\n";
+
+for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
+    std::smatch match = *i;
+    std::string match_str = match.str();
+    std::cout << match_str << '\n';
+} 
+*/
+
 int main( int argc , char ** argv)
 {
     if (argc != 4) {
@@ -296,19 +407,19 @@ int main( int argc , char ** argv)
     const char* magicReplytoAddress = argv[2];
     const char* replacementAddressFmtStr = argv[3];
 
-    if (quickCheckEmailFileForReplyTo(fileName, magicReplytoAddress)) {
-        std::cout << "YES!" << std::endl;
+    if (!quickCheckEmailFileForReplyTo(fileName, magicReplytoAddress)) {
+        std::cout << "No" << std::endl;
+    } else {
+
+        std::cout << "Yes." << std::endl;
+
+        transformEMLFile(fileName, magicReplytoAddress, replacementAddressFmtStr);
+
+        std::cout << "end" << "\n";
+
     }
-    else {
-        std::cout << "No." << std::endl;
-    }
-
-
-    std::cout << "end" << "\n";
-
 
     return 0;
-
 
 }
 
