@@ -13,6 +13,67 @@
 
 #include <errno.h>
 #include <regex>
+#include <chrono>
+#include <string>
+
+// appendLog uses the windows SYCHONIZE attribute to allow safe access from multipule processes
+// https://stackoverflow.com/questions/35595983/concurrent-file-write-between-processes#:~:text=clobbering%20each%20other.-,Option%202,-%3A%20Open%20as%20append
+
+// If fileName is empty then returns and does nothing
+// message2 is surrounded with single quotes in the logFile
+
+void appendLog(const std::string& fileName, const std::string& message1 , const std::string& message2 , const std::string& message3 ) {
+
+    if (fileName.empty()) return;   // Logging is opptional
+
+    // Get current time
+    auto now = std::chrono::system_clock::now();
+    auto time = std::chrono::system_clock::to_time_t(now);
+
+    // Use localtime_s for safe local time conversion
+    std::tm localTime;
+    localtime_s(&localTime, &time);
+
+    // Format the date and time
+    std::stringstream ss_line;
+    ss_line << std::put_time(&localTime, "%Y-%m-%d %H:%M:%S ") << message1 << " '" << message2 << "' " << message3 << "\n";
+
+    auto line = ss_line.str();
+
+    // Convert std::string to a wide string for CreateFile API.
+    std::wstring wideFileName(fileName.begin(), fileName.end());
+
+    // Open the file with append and synchronize options.
+    HANDLE fileHandle = CreateFile(
+        wideFileName.c_str(),                  // File name
+        FILE_APPEND_DATA | SYNCHRONIZE,        // Append data and allow synchronize access
+        FILE_SHARE_READ | FILE_SHARE_WRITE,    // Share for reading and writing
+        NULL,                                  // Default security
+        OPEN_ALWAYS,                           // Opens the file, if it exists; otherwise, creates a new file
+        FILE_ATTRIBUTE_NORMAL,                 // Normal file attributes
+        NULL                                   // No template file
+    );
+
+    if (fileHandle == INVALID_HANDLE_VALUE) {
+        std::cerr << "Failed to open the file handle." << std::endl;
+        return;
+    }
+
+    // Prepare the data to be written
+    DWORD bytesWritten;
+
+    // Write to the file
+    if (!WriteFile(fileHandle, line.c_str(), static_cast<DWORD>(line.size()), &bytesWritten, NULL)) {
+        std::cerr << "Failed to write to the file." << std::endl;
+    }
+    else {
+        std::cout << "Log entry added successfully." << std::endl;
+    }
+
+    // Close the handle
+    CloseHandle(fileHandle);
+}
+
 
 // Function to calculate the hash value of a string using DJB2 algorithm
 std::string MakeHash(const std::string& txt) {
@@ -28,8 +89,6 @@ std::string MakeHash(const std::string& txt) {
     ss << std::hex << std::setw(5) << std::setfill('0') <<std::uppercase << hash; // Convert hash to hexadecimal string
     return ss.str();
 }
-
-
 
 
 // Function to generate a hashed email address
@@ -86,7 +145,7 @@ int quickCheckOpenEmailFileForReplyTo(FILE* f, const char* magicReplyToAddress) 
 
 // Returns 1 if we care about this file
 
-int quickCheckEmailFileForReplyTo(const char* filePath, const char* magicReplyToAddress) {
+int quickCheckEmailFileForReplyTo( std::string logFilePathStr, const char* filePath, const char* magicReplyToAddress) {
 
     FILE* f;
 
@@ -99,7 +158,7 @@ int quickCheckEmailFileForReplyTo(const char* filePath, const char* magicReplyTo
         // Use strerror_s to safely get the error message
         strerror_s(errorMsg, sizeof(errorMsg), errno);
 
-        std::cerr << "cannot open file " << filePath << "error:" << errorMsg << std::endl;
+        appendLog( logFilePathStr, "open file" , filePath, errorMsg);
 
         return 0;
 
@@ -310,7 +369,10 @@ void transformEMLFile(const char* filePath,
         return;
     }
 
-    const char * tempFilePath = ( std::string( filePath ) + ".tmp" ).c_str();
+    // This must be its own line so that the string is not destroyed until the end of the block
+    auto tempFilePathStr = std::string(filePath) + ".tmp";
+
+    const char * tempFilePath = tempFilePathStr.c_str();
 
     std::ofstream outFile(tempFilePath); // Create a new file for writing
     if (!outFile.is_open()) {
@@ -397,8 +459,12 @@ for (std::sregex_iterator i = words_begin; i != words_end; ++i) {
 
 int main( int argc , char ** argv)
 {
-    if (argc != 4) {
-        std::cout << R"(Expects 2 args [special replyto address string (with<>) to replace] and [printf fmt string for new address with %s where the hash goes])" << std::endl;
+    if (argc!=4 && argc != 5) {
+        std::cout << "Expects 3 or 4 args:" << std::endl;
+        std::cout << " A special replyto address string(with <>) to search for and replace" << std::endl;
+        std::cout << " printf fmt string for new address (with <>) with% s where the hash goes" << std::endl;
+        std::cout << " path to the EML file to process" << std::endl;
+        std::cout << " optional path to a log directory (with trailing backslash) to keep a record of processed addresses (must have create and append access) and errors" << std::endl;
         return 0; 
     }
     std::cout << "begin" << "\n";
@@ -407,7 +473,16 @@ int main( int argc , char ** argv)
     const char* magicReplytoAddress = argv[2];
     const char* replacementAddressFmtStr = argv[3];
 
-    if (!quickCheckEmailFileForReplyTo(fileName, magicReplytoAddress)) {
+    // These default to empty
+    std::string logDirNameStr;
+    std::string logFileNameStr;
+
+    if (argc == 5) {
+        logDirNameStr = argv[4];
+        logFileNameStr = logDirNameStr + "log.txt";
+    }
+
+    if (!quickCheckEmailFileForReplyTo(  logFileNameStr, fileName, magicReplytoAddress)) {
         std::cout << "No" << std::endl;
     } else {
 
