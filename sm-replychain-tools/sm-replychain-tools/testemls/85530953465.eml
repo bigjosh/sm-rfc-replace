@@ -1,0 +1,506 @@
+Return-Path: <bounce-644852-616-221808-matt=josh.com@em-644852.freethepeople.org>
+Received: from s3.csa1.acemsb4.com (s3.csa1.acemsb4.com [192.92.97.113]) by mail.josh.com with SMTP
+	(version=TLS\Tls12
+	cipher=Aes256 bits=256);
+   Fri, 19 Apr 2024 17:39:53 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=acdkim1; d=freethepeople.org;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Feedback-ID:List-Unsubscribe:List-Unsubscribe-Post:Message-ID;
+ i=mkibbe@freethepeople.org;
+ bh=BbIvrKLqZgYurdPDlikt/PEMJwIlJ1DSEfaHuwLhkKw=;
+ b=AJltIta7eHgFbs76p/y1wmLMTDBGu7U56tsaI9oCYMiFucXfRPoVI5TY+lD/GwzlOGQ6Wrbfdqrv
+   qhMU9W2hdX4dJ8AEMV9yVQiObfJsWO8W7FgTiSf1rNJ2cpD4TRIlAIhw0P2W7tpWazgepNg/GxA8
+   cqROvv3LQ5XISIKkl7VZEQAW3raRhbtLdPaF3IYrlPz7kbFJAjvciRxguGLn19X6t8j1UudH9PRa
+   si3vIgDwLRmOC6PBSeMGEr6HalGx6vzT8Fkvwp2+m4Bww+7hhkLNabOajiaHOlnmANea+Nm7lkPa
+   2KPqfsetsOM1DRH63NEVa2MdT3IasgTZJeNHTA==
+Received: by s3.csa2.acemsa5.com id h4biai36bm48 for <matt@josh.com>; Fri, 19 Apr 2024 21:39:53 +0000 (envelope-from <bounce-644852-616-221808-matt=josh.com@em-644852.freethepeople.org>)
+X-Mailer: ActiveCampaign Mailer
+CFBL-Address: fbl-report@acems1.com; report=arf
+To: "Matt Andresen" <matt@josh.com>
+From: "Matt Kibbe" <mkibbe@freethepeople.org>
+Subject: If You Care About Your Country, Read Ludwig von Mises
+Date: Fri, 19 Apr 2024 16:39:51 -0500
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift-12800667236622e4a7683af8.82604693_=_"
+Content-Transfer-Encoding: 7bit
+X-Report-Abuse: Please report abuse here: abuse@acemserv.com
+X-mid: bWF0dEBqb3NoLmNvbSAsIGM2MTYgLCBtNjQ2ICwgczI5MjMx
+x-virtual-mta: s3.csa1.acemsb4.com
+Feedback-ID: 644852:644852.616:s3.csa1.acemsb4.com:activecampaign
+X-250ok-CID: 644852-616
+List-Unsubscribe: <https://email.freethepeople.org/box.php?nl=4&c=616&m=646&s=b65cf1c9f04e0ee7895ca3236ba3e354&funcml=unsub2&luha=1>,<mailto:unsubscribe-df7b7475560befe88c0681636e4d6852-616-b65cf1c9f04e0ee7895ca3236ba3e354@s3.csa2.acemsa4.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-DKIM-Options: s=acdkim1
+Message-ID: <20240419213953.5945.974729910.swift@email.freethepeople.org>
+
+
+--_=_swift-12800667236622e4a7683af8.82604693_=_
+Content-Type: text/plain; charset=utf-8
+
+UFC fighter Renato Moicano celebrated his latest victory with a shout
+out to Ludwig von Mises. 
+ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
+
+Dear Matt,
+
+It's finally happened, the moment I've known one day must come: the
+marriage of no-holds-barred physical combat and the Austrian School of
+economics. When UFC fighter Renato Moicano celebrated his latest victory
+with a shout out to Ludwig von Mises, he not only created a viral
+moment, but highlighted the urgent need for Americans to wake up and see
+what is being done to their country.
+
+In Moicano's speech, he declared his love for America and the
+Constitution, but warned that "if you care about your f---ing country,
+read Ludwig von Mises and the six lessons of the Austrian School,
+motherf---ers!" Later, he elaborated about the danger of inflation,
+which is rapidly debasing the U.S. dollar and making us poorer by the
+day.
+
+Ludwig von Mises, one of the seminal figures of the Austrian School,
+understood this problem all too well, and warned against the ruinous
+consequences of expansionary monetary policy. But you don't have to
+take my word for it, or even Moicano's. You can follow the fighter's
+advice and read Mises in his own words. Mises's book "Economic Policy:
+Thoughts for Today and Tomorrow" has surged in popularity since
+Moicano's speech, with some retailers reporting that they have already
+sold out of physical copies. But never fear! Free the People's digital
+library has you covered. You can download the full text here
+,
+absolutely free.
+
+This book was compiled from several lectures by Mises urging Argentina
+to liberalize its economic policy, and lays out in simple,
+straightforward terms the basic lessons of sound economics, including
+the importance of prices and private property, the hazards of socialism,
+and much more. It's just one of the many books by Mises we are making
+available free of charge, and a great starting point for anyone who
+wants to understand why our country is heading down the wrong path, and
+how to change things for the better.
+
+In addition, we are offering our exclusive Read More Mises t-shirts
+
+and stickers
+
+to help spread Moicano's message to the masses. Now you can support
+liberty and make a fashion statement at the same time!
+
+I'm delighted to see voices like Moicano's shining a light on the
+wisdom of the Austrian School; the time has never been more ripe for
+Americans to demand sound economic policy from their government. If even
+the UFC can spread the word and stand up for what's right, what's
+your excuse?
+
+Matt Kibbe
+President
+Free the People
+
+Unsubscribe matt@josh.com
+
+Free the People, 611 Pennsylvania Avenue SE #259, Washington, DC 20003, United States
+--_=_swift-12800667236622e4a7683af8.82604693_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html>=0A
+  <head>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+    <meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8=
+">
+   =20
+   =20
+  <style type=3D"text/css">
+        img{
+=09=09=09border:none;
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09=09max-width:100%;
+=09=09}
+=09=09body{
+=09=09=09background-color:#ffffff;
+=09=09=09font-family:sans-serif;
+=09=09=09-webkit-font-smoothing:antialiased;
+=09=09=09font-size:14px;
+=09=09=09line-height:1.4;
+=09=09=09margin:15px;
+=09=09=09padding:0;
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:separate;
+=09=09=09mso-table-lspace:0;
+=09=09=09mso-table-rspace:0;
+=09=09=09width:100%;
+=09=09=09border-spacing:0;
+=09=09}
+=09=09table td{
+=09=09=09font-family:sans-serif;
+=09=09=09font-size:14px;
+=09=09=09vertical-align:top;
+=09=09}
+=09=09.body{
+=09=09=09background-color:#ffffff;
+=09=09=09width:100%;
+=09=09}
+=09=09.container{
+=09=09=09display:block;
+=09=09=09margin:0 auto !important;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.content{
+=09=09=09box-sizing:border-box;
+=09=09=09display:block;
+=09=09=09margin:0 auto;
+=09=09=09padding:0;
+=09=09}
+=09=09.main{
+=09=09=09background:#ffffff;
+=09=09=09border-radius:0;
+=09=09=09border-spacing:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.wrapper{
+=09=09=09box-sizing:border-box;
+=09=09=09padding:0;
+=09=09}
+=09=09.content-block{
+=09=09=09padding-bottom:10px;
+=09=09=09padding-top:10px;
+=09=09}
+=09=09.social-follow{
+=09=09=09height:24px;
+=09=09=09width:24px;
+=09=09}
+=09=09.footer{
+=09=09=09clear:both;
+=09=09=09text-align:left;
+=09=09=09width:100%;
+=09=09}
+=09=09.footer td,.footer p,.footer span,.footer a{
+=09=09=09color:#bbbbbb;
+=09=09=09font-size:10px;
+=09=09=09text-align:left;
+=09=09}
+=09=09h1,h2,h3,h4{
+=09=09=09color:#16181b;
+=09=09=09font-family:sans-serif;
+=09=09=09font-weight:400;
+=09=09=09line-height:1.4;
+=09=09=09margin:0;
+=09=09=09margin-bottom:30px;
+=09=09}
+=09=09h1{
+=09=09=09font-size:35px;
+=09=09=09font-weight:300;
+=09=09=09text-align:center;
+=09=09=09text-transform:capitalize;
+=09=09}
+=09=09p,ul,ol{
+=09=09=09font-family:sans-serif;
+=09=09=09font-size:14px;
+=09=09=09font-weight:normal;
+=09=09=09margin:0;
+=09=09=09margin-bottom:15px;
+=09=09}
+=09=09p li,ul li,ol li{
+=09=09=09list-style-position:inside;
+=09=09}
+=09=09a{
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09.btn{
+=09=09=09box-sizing:border-box;
+=09=09=09width:100%;
+=09=09}
+=09=09.btn>tbody>tr>td{
+=09=09=09padding-bottom:15px;
+=09=09}
+=09=09.btn table{
+=09=09=09width:auto;
+=09=09}
+=09=09.btn table td{
+=09=09=09background-color:#ffffff;
+=09=09=09border-radius:0;
+=09=09=09text-align:center;
+=09=09}
+=09=09.btn a{
+=09=09=09background-color:#ffffff;
+=09=09=09border:solid 1px #db5330;
+=09=09=09border-radius:0;
+=09=09=09box-sizing:border-box;
+=09=09=09color:#db5330;
+=09=09=09cursor:pointer;
+=09=09=09display:inline-block;
+=09=09=09font-size:14px;
+=09=09=09font-weight:bold;
+=09=09=09margin:0;
+=09=09=09padding:12px 25px;
+=09=09=09text-decoration:none;
+=09=09=09text-transform:uppercase;
+=09=09}
+=09=09.btn-primary table td{
+=09=09=09background-color:#db5330;
+=09=09}
+=09=09.btn-primary a{
+=09=09=09background-color:#db5330;
+=09=09=09border-color:#db5330;
+=09=09=09color:#ffffff;
+=09=09}
+=09=09.last{
+=09=09=09margin-bottom:0;
+=09=09}
+=09=09.first{
+=09=09=09margin-top:0;
+=09=09}
+=09=09.align-center{
+=09=09=09text-align:center;
+=09=09}
+=09=09.align-right{
+=09=09=09text-align:right;
+=09=09}
+=09=09.align-left{
+=09=09=09text-align:left;
+=09=09}
+=09=09.clear{
+=09=09=09clear:both;
+=09=09}
+=09=09.mt0{
+=09=09=09margin-top:0;
+=09=09}
+=09=09.mb0{
+=09=09=09margin-bottom:0;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09hr{
+=09=09=09border:0;
+=09=09=09border-bottom:1px solid #f6f6f6;
+=09=09=09margin:20px 0;
+=09=09}
+=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .footer,table[class=3Dbody] .footer td,table[clas=
+s=3Dbody] .footer p,table[class=3Dbody] .footer span,table[class=3Dbody] .f=
+ooter a{
+=09=09=09font-size:10px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] h1{
+=09=09=09font-size:28px !important;
+=09=09=09margin-bottom:10px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] p,table[class=3Dbody] ul,table[class=3Dbody] ol,t=
+able[class=3Dbody] td,table[class=3Dbody] span,table[class=3Dbody] a{
+=09=09=09font-size:16px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .wrapper,table[class=3Dbody] .article{
+=09=09=09padding:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .content{
+=09=09=09padding:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .container{
+=09=09=09padding:0 !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .main{
+=09=09=09border-left-width:0 !important;
+=09=09=09border-radius:0 !important;
+=09=09=09border-right-width:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .btn table{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .btn a{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 620px){
+=09=09table[class=3Dbody] .img-responsive{
+=09=09=09height:auto !important;
+=09=09=09max-width:100% !important;
+=09=09=09width:auto !important;
+=09=09}
+
+}=09@media all{
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+
+}=09@media all{
+=09=09.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass fo=
+nt,.ExternalClass td,.ExternalClass div{
+=09=09=09line-height:100%;
+=09=09}
+
+}=09@media all{
+=09=09.apple-link a{
+=09=09=09color:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09}
+
+}=09@media all{
+=09=09.btn-primary table td:hover{
+=09=09=09-webkit-box-shadow:0 3px 8px 0 rgba(0,0,0,.3) !important;
+=09=09=09box-shadow:0 3px 8px 0 rgba(0,0,0,.3) !important;
+=09=09}
+
+}=09@media all{
+=09=09.btn-primary a:hover{
+=09=09=09-webkit-box-shadow:0 3px 8px 0 rgba(0,0,0,.3) !important;
+=09=09=09box-shadow:0 3px 8px 0 rgba(0,0,0,.3) !important;
+=09=09}
+
+}</style>
+</head>
+  <body class=3D"">=09=09<div style=3D"display: none !important; padding: 0=
+; height: 1px; font-size: 1px; background-color: inherit !important; opacit=
+y: 0; color: transparent; mso-line-height-rule: exactly; line-height:1px; m=
+so-hide:all;">=0A=09=09=09UFC fighter Renato Moicano celebrated his latest =
+victory with a shout out to Ludwig von Mises.=0A=09=09=09<div style=3D"disp=
+lay: none; max-height: 0px; overflow: hidden;">=0A=09=09=09=09&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C=0A=09=09=09</div>=0A=0A=09=09</div>=0A
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"body">
+      <tr>
+        <td class=3D"container">
+          <div class=3D"content">
+            <!-- START CENTERED WHITE CONTAINER -->
+            <table class=3D"main">
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td class=3D"wrapper">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                    <tr>
+                      <td>
+                        <p>Dear Matt,</p>=0A
+                        <p>It=E2=80=99s finally happened, the moment I=
+=E2=80=99ve known one day must come: the marriage of no-holds-barred physic=
+al combat and the Austrian School of economics. When UFC fighter Renato Moi=
+cano celebrated his latest victory with a shout out to Ludwig von Mises, he=
+ not only created a viral moment, but highlighted the urgent need for Ameri=
+cans to wake up and see what is being done to their country.</p>=0A
+                        <p>In Moicano=E2=80=99s speech, he declared his lov=
+e for America and the Constitution, but warned that "if you care about your=
+ f---ing country, read Ludwig von Mises and the six lessons of the Austrian=
+ School, motherf---ers!" Later, he elaborated about the danger of inflation=
+, which is rapidly debasing the U.S. dollar and making us poorer by the day=
+.</p>=0A
+                        <p>Ludwig von Mises, one of the seminal figures of =
+the Austrian School, understood this problem all too well, and warned again=
+st the ruinous consequences of expansionary monetary policy. But you don=
+=E2=80=99t have to take my word for it, or even Moicano=E2=80=99s. You can =
+follow the fighter=E2=80=99s advice and read Mises in his own words. Mises=
+=E2=80=99s book "Economic Policy: Thoughts for Today and Tomorrow" has surg=
+ed in popularity since Moicano=E2=80=99s speech, with some retailers report=
+ing that they have already sold out of physical copies. But never fear! Fre=
+e the People=E2=80=99s digital library has you covered. You can <a href=3D"=
+https://freethepeople.org/books/economic-policy-thoughts-for-today-and-tomo=
+rrow/" target=3D"_blank">download the full text here</a>, absolutely free.<=
+/p>=0A
+                        <p>This book was compiled from several lectures by =
+Mises urging Argentina to liberalize its economic policy, and lays out in s=
+imple, straightforward terms the basic lessons of sound economics, includin=
+g the importance of prices and private property, the hazards of socialism, =
+and much more. It=E2=80=99s just one of the many books by Mises we are maki=
+ng available free of charge, and a great starting point for anyone who want=
+s to understand why our country is heading down the wrong path, and how to =
+change things for the better.</p>=0A
+                        <p>In addition, we are offering our exclusive <a hr=
+ef=3D"https://shop.freethepeople.org/collections/mens-apparel/products/read=
+-more-mises-mens-shirt" target=3D"_blank">Read More Mises t-shirts</a> and =
+<a href=3D"https://shop.freethepeople.org/collections/stickers/products/lud=
+wig-von-mises-sticker" target=3D"_blank">stickers</a> to help spread Moican=
+o=E2=80=99s message to the masses. Now you can support liberty and make a f=
+ashion statement at the same time!</p>=0A
+                        <p>I=E2=80=99m delighted to see voices like Moicano=
+=E2=80=99s shining a light on the wisdom of the Austrian School; the time h=
+as never been more ripe for Americans to demand sound economic policy from =
+their government. If even the UFC can spread the word and stand up for what=
+=E2=80=99s right, what=E2=80=99s your excuse?</p>=0A
+                        <p><img src=3D"http://freethepeople.img-us6.com/kar=
+apally/matt-sig.png" width=3D"80" alt=3D"" title=3D""></p>=0A
+                        <p>Matt Kibbe<br>
+                        President<br>
+                        Free the People</p>=0A
+                      </td>=0A
+                    </tr>=0A
+                  </table>=0A
+                </td>=0A
+              </tr>=0A
+              <!-- END MAIN CONTENT AREA -->
+            </table>=0A
+            <!-- START FOOTER -->
+            <div class=3D"footer">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                  <td class=3D"content-block">
+                    <p><a href=3D"https://email.freethepeople.org/proc.php?=
+nl=3D4&c=3D616&m=3D646&s=3Db65cf1c9f04e0ee7895ca3236ba3e354&act=3Dunsub">Un=
+subscribe matt@josh.com</a></p>=0A
+                    <p>Free the People, 611 Pennsylvania Avenue SE #259, Wa=
+shington, DC 20003, United States</p>=0A
+                </td>=0A
+              </tr>=0A
+            </table>=0A
+          </div>=0A
+          <!-- END FOOTER -->
+          <!-- END CENTERED WHITE CONTAINER -->
+        </div>=0A
+      </td>=0A
+    </tr>=0A
+  </table>=0A
+<img src=3D"https://email.freethepeople.org/Prod/link-tracker?nl=3D4&c=3D61=
+6&m=3D646&s=3Db65cf1c9f04e0ee7895ca3236ba3e354&l=3Dopen&account=3Dfreethepe=
+ople.activehosted.com&a=3D66297252" border=3D"0" width=3D"1" height=3D"1" s=
+tyle=3D"display:block;width:1px!important;min-width:1px!important;max-width=
+:1px!important;height:1px!important;border:0;overflow:hidden;" /><br clear=
+=3D"all" /></body>
+=0A</html>
+--_=_swift-12800667236622e4a7683af8.82604693_=_--
+

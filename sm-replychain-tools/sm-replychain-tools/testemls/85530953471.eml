@@ -1,0 +1,804 @@
+Return-Path: <messages@info.nj.gov>
+Received: from mailer018014.govd1.service.govdelivery.com (mailer018014.govd1.service.govdelivery.com [66.179.18.14]) by mail.josh.com with SMTP
+	(version=TLS\Tls12
+	cipher=Aes256 bits=256);
+   Fri, 19 Apr 2024 17:41:25 -0400
+Received: from gasdp-smeds16-2.systems.dc.gdi ([10.1.36.21])
+	by mailer018014.govd1.service.govdelivery.com (-); Fri, 19 Apr 2024 21:41:24 +0000
+X-VirtualServer: VSG001, mailer018014.govd1.service.govdelivery.com, 10.1.37.109
+X-VirtualServerGroup: VSG001
+X-MailingID: 16808351::20240419.93631871::1001::MDB-PRD-BUL-20240419.93631871::josh@josh.com::1916106_0_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: josh@josh.com
+X-SMFBL: am9zaEBqb3NoLmNvbQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=info.nj.gov; s=20q2; i=@info.nj.gov; h=Content-Transfer-Encoding:
+	Content-Type:x-subscriber:List-Unsubscribe:X-Accountcode:
+	Errors-To:MIME-Version:Message-ID:X-ReportingKey:Subject:Date:To:
+	Reply-To:From; bh=wWc85vPyVUNmbjVeq7nWLd0X48/852a30hGHjLvVVIk=;
+	b=IGwZQWkAk2p8yxlLu5YgFW6AH/WgdgpIS6Q7JOYXN3zVMtoqQ03yrxqsIJBRDu
+	ji1oFPNmCRW2xTqNIdC1NPO2grB5tm0MCkePrHrIw1IagQUE914FMgjCMdmf6xoD
+	KYdVtBCr3K0uaBvqc9TJjK7lGfjd/pKc0bsZx67pVS2pvCV6fpOugaPGJUTi24Ss
+	EiGkZzdBer1KZV6BJ5PVfpOxLgwB2qG8AatH8/hOqHJcApkzsolMEzPGicldH33F
+	zthxyE/i5YO586GjXv91SiSxmps4JZW3WU9Oea9dCODQWjr0NZpua4QvnvaT9WBK
+	ckqC8gQiuW2WfLjo6psEXjMw==
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_C31_2AE1_3CB0851D.7F1DEAD6"
+x-subscriber: 3.nED/nTNipZCOCswkVWt+tLk+SEsk4zyJZ9n8489DFtVd+UJBjr0FWJFvqmsebqxO2MLpJygMXzz3j80th2s4jT8xcB1P4M5CLfHDlhzSIrkfCElC1ZRCMbrJYa06KjrdYhH/rrrBcsX9suySTXd9fA==
+List-Unsubscribe: <https://public.govdelivery.com/accounts/NJGOV/subscriber/one_click_unsubscribe?verification=5.d0f4c8b0304d5638309c9a1bf290ea7b&destination=josh%40josh.com>
+X-Accountcode: NJGOV
+Errors-To: messages@info.nj.gov
+MIME-Version: 1.0
+Message-ID: <16808351.1916106@info.nj.gov>
+X-ReportingKey: MJJJ2EWJK4A4WJJED6EWJJJ::josh@josh.com::josh@josh.com
+Subject: =?US-ASCII?Q?NJ_Updates:_Don't_Fall_Victim_to_Scam_Texts?=
+Date: Fri, 19 Apr 2024 21:41:22 +0000
+To: josh@josh.com
+Reply-To: updates@info.nj.gov
+From: "=?US-ASCII?Q?The_State_of_New_Jersey?=" <updates@info.nj.gov>
+
+
+------=_NextPart_C31_2AE1_3CB0851D.7F1DEAD6
+Content-Type: text/plain;
+	charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Children ride free for "Take Your Kids to Work Day." =20
+
+=20
+
+View as a webpage / Share [ https://content.govdelivery.com/accounts/NJGO=
+V/bulletins/397825f ]
+
+=20
+
+April 19, 2024
+
+ State of New Jersey [ https://covid19.nj.gov/?utm_campaign=3D20240419_nw=
+sltr&utm_medium=3Demail&utm_source=3Dgovdelivery ] =20
+NJ Updates: Events, Deadlines, Programs, Guidance, and More
+
+Want to know about current topics in New Jersey? The State of New Jersey =
+Update features information, news, resources, guidance, and more. Additio=
+nal featured news is also available at=A0*NJ.gov [ http://nj.gov/?utm_cam=
+paign=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ].*
+
+________________________________________________________________________
+
+=20
+
+*Free Rides for Kids on "Take Your Kids to Work Day" with NJ TRANSIT [ ht=
+tps://www.njtransit.com/?utm_campaign=3D20240419_nwsltr&utm_medium=3Demai=
+l&utm_source=3Dgovdelivery ]*
+
+Train [ https://www.njtransit.com/?utm_campaign=3D20240419_nwsltr&utm_med=
+ium=3Demail&utm_source=3Dgovdelivery ]=20
+
+Two kids (under 18) ride free with each adult buying a fare on Thursday, =
+April 25. This deal applies to all buses, trains, and light rail services=
+. Children do not need their own tickets.
+
+=20
+
+*Buy Tickets [ https://www.njtransit.com/?utm_campaign=3D20240419_nwsltr&=
+utm_medium=3Demail&utm_source=3Dgovdelivery ]*
+
+________________________________________________________________________
+
+=20
+
+*Do Not Feed the Bears: Secure Your Trash [ https://dep.nj.gov/njfw/bears=
+/garbage-management/?utm_campaign=3D20240419_nwsltr&utm_medium=3Demail&ut=
+m_source=3Dgovdelivery ]*
+
+Bear [ https://dep.nj.gov/njfw/bears/garbage-management/?utm_campaign=3D2=
+0240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ]=20
+
+Black bears are out of their winter dens and foraging for food. Prevent b=
+ears from accessing food in your garbage by using bear-resistant trash co=
+ntainers. Reducing food attractants is crucial to avoid attracting bears =
+to residential areas, which can lead to dangerous interactions.
+
+Though most of New Jersey's black bears live in the northwest portion of =
+the State, black bears have been sighted in all 21 counties. If you see a=
+ bear, remain calm, avoid eye contact, and back away slowly. Do not run.
+
+=20
+
+*Get More Tips [ https://dep.nj.gov/njfw/bears/garbage-management/?utm_ca=
+mpaign=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ]*
+
+________________________________________________________________________
+
+=20
+
+*New Text Message Scam Targeting New Jersey Residents [ https://www.cyber=
+.nj.gov/connect/weekly-bulletin?utm_campaign=3D20240419_nwsltr&utm_medium=
+=3Demail&utm_source=3Dgovdelivery ]*
+
+Fraud alert [ https://www.cyber.nj.gov/connect/weekly-bulletin?utm_campai=
+gn=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ]=20
+
+Fraudulent operators are sending text messages to some residents requesti=
+ng payment for unpaid road tolls. If you receive a text claiming you owe =
+an unpaid toll, do "not" click on any links or provide personal informati=
+on. Visit the NJCCIC website for additional guidance.
+
+=20
+
+*Learn More [ https://www.cyber.nj.gov/connect/weekly-bulletin?utm_campai=
+gn=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ]*
+
+________________________________________________________________________
+
+=20
+=20
+
+*Was this email helpful?*
+
+yes it was helpful [ https://innovatenj.jotform.com/210624871986869?utm_c=
+ampaign=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ] n=
+o it was not helpful [ https://innovatenj.jotform.com/210625672286862?utm=
+_campaign=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ]=
+=20
+=20
+
+"Some newsletter content was created with the assistance of generative AI=
+.=A0*Learn more [ https://innovation.nj.gov/skills/ai/?utm_campaign=3D202=
+40419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ].*"
+
+=20
+=20
+=20
+=20
+=20
+
+Stay Connected with The State of New Jersey: Facebook [ https://www.faceb=
+ook.com/governorphilmurphy/?utm_campaign=3D20240419_nwsltr&utm_medium=3De=
+mail&utm_source=3Dgovdelivery ]=A0 Twitter [ https://twitter.com/GovMurph=
+y?utm_campaign=3D20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdeliv=
+ery ]=A0 Instagram [ https://www.instagram.com/govmurphy/?utm_campaign=3D=
+20240419_nwsltr&utm_medium=3Demail&utm_source=3Dgovdelivery ]=A0 SUBSCRIB=
+ER SERVICES:
+Manage Subscriptions [ https://public.govdelivery.com/accounts/NJGOV/subs=
+criber/edit?preferences=3Dtrue#tab1 ] =A0|=A0 Unsubscribe All [ https://p=
+ublic.govdelivery.com/accounts/NJGOV/subscriber/one_click_unsubscribe?ver=
+ification=3D5.d0f4c8b0304d5638309c9a1bf290ea7b&destination=3Djosh%40josh.=
+com ] =A0|=A0 Help [ https://subscriberhelp.govdelivery.com/ ] =20
+body .abe-column-block {min-height: 0px;}=20
+
+________________________________________________________________________
+
+ This email was sent to josh@josh.com using GovDelivery Communications Cl=
+oud on behalf of: The State of New Jersey =B7=A0
+PO Box 001=A0=B7 Trenton, NJ 08625 GovDelivery logo [ https://subscriberh=
+elp.granicus.com/?utm_campaign=3D20240419_nwsltr&utm_medium=3Demail&utm_s=
+ource=3Dgovdelivery ]
+=0A
+------=_NextPart_C31_2AE1_3CB0851D.7F1DEAD6
+Content-Type: text/html;
+	charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en">=
+
+<head>
+<title>    NJ Updates: Don&#39;t Fall Victim to Scam Texts
+</title>
+    <meta content=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D"initial-scale=3D1.0">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<style type=3D"text/css">
+/*start reset css*/
+div { line-height: 1; }
+body, table, td, p, a, li, blockquote { -webkit-text-size-adjust: 100%; -=
+ms-text-size-adjust: 100%; }
+body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+table { border-spacing: 0; }
+table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+img { -ms-interpolation-mode: bicubic; }
+body { margin: 0; padding: 0; }
+img { border: none !important; height: auto; line-height: 1; outline: non=
+e; text-decoration: none; }
+table td { border-collapse: collapse !important; }
+.preheader { display: none !important; visibility: hidden; opacity: 0; co=
+lor: transparent; height: 0; width: 0; }
+/*end reset css*/
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+
+/* Sets the line height in everything but Outlook */
+table#yahoo body, table#yahoo p, table#yahoo .gd_p, table#yahoo p span, t=
+able#yahoo li, table#yahoo li span { line-height: 1.4; }
+
+
+/* outlook.com line-height control */
+.ExternalClass p,=20
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td
+{line-height: 100%}
+
+table#yahoo .govd_template_image { max-width: 100% !important; max-width:=
+100%; }
+table#yahoo .govd_template_image, table#yahoo .govd_template_image img { =
+height:auto !important; height:auto; }
+
+/* Fixed Outlookdotcom and Outlook360 not supporting Hspace - HT 2-12-202=
+0 */
+table#yahoo .gd_combo_table img {margin-left:7px; margin-right:7px;}
+table#yahoo .gd_combo_table td.gd_combo_image_cell img, table#yahoo .gd_c=
+ombo_table div.govd_image_display img {margin-left:0px; margin-right:0px;=
+}
+
+@media only screen and (max-device-width: 480px) {
+table#yahoo, table#yahoo table { position: relative; }
+table#yahoo .govd_header { max-width: 480px !important; }
+table#yahoo .govd_hr img, table#yahoo .govd_hr_inner img { display:none !=
+important; }
+table#yahoo img { max-width: 100% !important; width: auto !important; }
+table#yahoo .govd_template_image { height: auto !important; max-width: 10=
+0% !important; width: auto !important; margin:0 !important; }
+table#yahoo table.gd_combo_table .govd_template_image { margin:0 auto 10p=
+x auto !important; display:block !important; float:none !important; text-=
+align:center; }
+table#yahoo table.gd_combo_table td.gd_combo_image_cell .govd_template_im=
+age { margin:0 !important; text-align:left; }
+/* table#yahoo #main-header .govd_template_image { max-width: 480px !impo=
+rtant; width: 100% !important; } */
+table#yahoo .govd_content_container .govd_image_display { margin-left:0 !=
+important; }
+table#yahoo .container-fill, table.gd_tbl_wrap, table.gd_tbl_wrap table {=
+ max-width: 480px !important; }
+.main-table, .mobile-footer, .mobile-tagline, table.gd_tbl_wrap, table.gd=
+_tbl_wrap table { width:100% !important; min-width:100% !important; max-w=
+idth:480px !important; }
+table#yahoo .tablecell, .tablecell { width:100% !important; display: bloc=
+k !important; max-width:100% !important; min-width: 100% !important; }
+table#yahoo p, table#yahoo p span, table#yahoo .gd_p, table#yahoo li { fo=
+nt-size:13pt !important; }
+table#yahoo #view-in-browser p, table#yahoo #view-in-browser p span, tabl=
+e#yahoo #view-in-browser .gd_p, table#yahoo #view-in-browser li { font-si=
+ze:8pt !important; }
+table#yahoo h1 { font-size:18pt !important; }
+table#yahoo h2 { font-size:16pt !important; }
+table#yahoo h3 { font-size:14pt !important; }
+table#yahoo #main-body .govd_hr {background:transparent none !important;}=
+
+.mobile-hide {display:none !important;}
+.mobile-padding {padding:0 !important;}
+.mobile-columns {padding:10px 20px !important;}
+}
+</style>
+
+</head>
+<body style=3D"line-height:1.4;margin:0;padding:0;width:100% !important;"=
+>
+<table bgcolor=3D'#ffffff' border=3D'0' cellpadding=3D'0' cellspacing=3D'=
+0' style=3D'width: 100%;'>
+<tbody>
+<tr bgcolor=3D'#ffffff'>
+<td align=3D'center' style=3D'background-color: #ffffff; padding: 0px; fo=
+nt-size:1px; font-family:&#39;Helvetica Neue&#39;, Helvetica, Arial, sans=
+-serif; color:#ffffff' valign=3D'top'>
+Children ride free for &quot;Take Your Kids to Work Day.&quot;
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<!--[if (gte mso 9)|(IE)]>
+  <table style=3D"display:none"><tr><td><a name=3D"gd_top" id=3D"gd_top">=
+</a></td></tr></table>
+<![endif]-->
+<a name=3D"gd_top" id=3D"gd_top"></a>
+
+ =20
+
+
+
+ =20
+  <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+align=3D"center" class=3D"gd_tbl_wrap"><tr><td style=3D"background-color:=
+ #FFFFFF; margin: 0; padding: 0; width: 100% !important" bgcolor=3D"#FFFF=
+FF"><table class=3D"main-table" width=3D"100%" align=3D"center" cellpaddi=
+ng=3D"0" cellspacing=3D"0" id=3D"yahoo" style=3D"border-collapse: collaps=
+e;">
+<tr>
+<td width=3D"100%" style=3D"padding: 0 0 20px;" class=3D"mobile-padding">=
+=20
+
+<!--[if mso]>
+<table class=3D"main-table" width=3D"600" align=3D"center" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"width:600px;">
+<tr>
+<td>
+<![endif]-->
+
+<div style=3D"max-width: 600px; width: 100%; margin: 0 auto;">
+
+<table width=3D"100%" align=3D"center" style=3D"border-collapse: collapse=
+;" cellpadding=3D"0" cellspacing=3D"0">
+
+<tr>
+<td id=3D"view-in-browser" width=3D"100%" data-govdstyle=3D"all" data-gov=
+dtitle=3D"View in Browser" class=3D"thin" style=3D"padding: 10px;">
+<p style=3D"line-height: 1.1; margin-top: 0; margin-bottom: 0; color: #44=
+4444; font-family: arial, helvetica, sans-serif; font-size: 11px; text-al=
+ign: center;" align=3D"center"><a href=3D"https://lnks.gd/l/eyJhbGciOiJIU=
+zI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDAsInVyaSI6ImJwMjpjbGljayIsInVybCI6I=
+mh0dHBzOi8vY29udGVudC5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvTkpHT1YvYnVsbGV0aW=
+5zLzM5NzgyNWYiLCJidWxsZXRpbl9pZCI6IjIwMjQwNDE5LjkzNjMxODcxIn0.aqbZZ0J5JcT=
+tsUfqmaA9tfmmglvRCPq6362vg-yOM9A/s/1479999573/br/241072625716-l" target=3D=
+"_blank" rel=3D"noopener" style=3D"color: #444444; text-decoration: under=
+line; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens:=
+ none; -moz-hyphens: none; hyphens: none;">View as a webpage / Share</a><=
+/p>
+</td>
+</tr>
+
+<tr>
+<td>
+<table width=3D"100%" align=3D"center" cellpadding=3D"0" cellspacing=3D"0=
+" bgcolor=3D"#FFFFFF" style=3D"background-color: #FFFFFF; box-shadow: 1px=
+ 1px 9px #AAAAAA; border-collapse: collapse; border: 1px solid #dddddd;">=
+
+ =20
+<tr>
+<td id=3D"top-line" width=3D"100%" data-govdstyle=3D"all" data-govdtitle=3D=
+"Top Line" class=3D"thin" style=3D"background-color: #000000; padding: 7p=
+x 30px;" bgcolor=3D"#000000">
+<p style=3D"text-align: right; line-height: 1.1; margin-top: 0; margin-bo=
+ttom: 0; color: #FFFFFF; font-family: arial, helvetica, sans-serif; font-=
+size: 14px;" align=3D"right">April 19, 2024</p>
+</td>
+</tr>
+
+<tr>
+<td id=3D"main-header" width=3D"100%" data-govdstyle=3D"all" data-govdtit=
+le=3D"Main Header" style=3D"padding: 30px;">
+<a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2l=
+kIjoxMDEsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vY292aWQxOS5uai5nb3Yv=
+P3V0bV9jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291c=
+mNlPWdvdmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg3MSJ9.iKLNJ=
+7iF8H2Q9CDX520fQEaJjSOmv8QP7Q2E2ZbKBjo/s/1479999573/br/241072625716-l" ta=
+rget=3D"_blank" rel=3D"noopener noreferrer" style=3D"color: #05498A; text=
+-decoration: underline; -ms-word-break: break-all; word-break: break-word=
+; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;"><img class=3D=
+"govd_template_image" src=3D"https://content.govdelivery.com/attachments/=
+fancy_images/NJGOV/2020/05/3344161/banner_original.png" style=3D"width: 1=
+87px; height: auto !important; max-height: auto !important; border: none;=
+" alt=3D"State of New Jersey" width=3D"187" height=3D"79"></a>
+</td>
+</tr>
+
+<tr>
+<td id=3D"main-body" width=3D"100%" data-govdstyle=3D"all" data-govdtitle=
+=3D"Main Body" style=3D"padding: 10px 30px 30px;">
+<h1 style=3D"text-align: center; margin-top: 0; margin-bottom: 20px; line=
+-height: 1.1; font-weight: normal; color: #000000; font-family: arial, he=
+lvetica, sans-serif; font-size: 27px;" align=3D"center">NJ Updates: Event=
+s, Deadlines, Programs, Guidance, and More</h1>
+<p style=3D"text-align: center; line-height: 1.4; margin-top: 10px; margi=
+n-bottom: 20px; color: #1e222d; font-family: arial, helvetica, sans-serif=
+; font-size: 16px;" align=3D"center">Want to know about current topics in=
+ New Jersey? The State of New Jersey Update features information, news, r=
+esources, guidance, and more. Additional featured news is also available =
+at=A0<strong><a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZX=
+Rpbl9saW5rX2lkIjoxMDIsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHA6Ly9uai5nb3Y=
+vP3V0bV9jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291=
+cmNlPWdvdmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg3MSJ9.UQII=
+E9KqRNbRh3XG0WIqOQBeY_I2Qpm4OJgKSUGQwho/s/1479999573/br/241072625716-l" t=
+arget=3D"_blank" class=3D"c-link" data-stringify-link=3D"http://NJ.gov" d=
+ata-sk=3D"tooltip_parent" data-remove-tab-index=3D"true" rel=3D"noopener"=
+ style=3D"color: #05498A; text-decoration: underline; -ms-word-break: bre=
+ak-all; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: none=
+; hyphens: none;">NJ.gov</a>.</strong></p>
+<table class=3D"govd_hr" cellspacing=3D"0" border=3D"0" align=3D"center" =
+width=3D"100%" cellpadding=3D"0" style=3D"border-collapse: collapse;"><tr=
+ class=3D"govd_hr_inner"><td width=3D"100%"><hr style=3D"color: #DDDDDD; =
+border-top-color: #DDDDDD; border-top-style: solid; border-top-width: 1px=
+; display: block; margin-top: 30px; margin-bottom: 30px; padding: 0;"></t=
+d></tr></table>
+<h2 style=3D"margin-top: 20px; margin-bottom: 10px; line-height: 1.1; fon=
+t-weight: normal; color: #555555; font-family: arial, helvetica, sans-ser=
+if; font-size: 21px; text-align: left;" align=3D"left"><strong><a href=3D=
+"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDMsI=
+nVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3Lm5qdHJhbnNpdC5jb20vP3V0bV=
+9jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWd=
+vdmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg3MSJ9.CGodWTqaXm8=
+YA5GdSS4V7T9gTs1eurv-lXyDcobm-tI/s/1479999573/br/241072625716-l" target=3D=
+"_blank" rel=3D"noopener" style=3D"color: #05498A; text-decoration: none;=
+ -ms-word-break: break-all; word-break: break-word; -webkit-hyphens: none=
+; -moz-hyphens: none; hyphens: none;">Free Rides for Kids on "Take Your K=
+ids to Work Day" with NJ TRANSIT</a></strong></h2>
+<table class=3D"gd_combo_table" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse: collapse;">
+  <tr>
+    <td>
+      <a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9sa=
+W5rX2lkIjoxMDQsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3Lm5qdHJhbn=
+NpdC5jb20vP3V0bV9jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbCZ=
+1dG1fc291cmNlPWdvdmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg3=
+MSJ9.kV-amveT6nB1Lufujq8F4tvnGzsJvdLN1D4Mf-zJAV0/s/1479999573/br/24107262=
+5716-l" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"color: #05=
+498A; text-decoration: underline; -ms-word-break: break-all; word-break: =
+break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;"><i=
+mg class=3D"govd_template_image" src=3D"https://content.govdelivery.com/a=
+ttachments/fancy_images/NJGOV/2024/04/9347030/5396666/noun-train-6749307-=
+11538f_crop.png" style=3D"width: 172px; height: auto !important; float: r=
+ight; max-height: auto !important; border: none;" alt=3D"Train" width=3D"=
+172" height=3D"172" align=3D"right" hspace=3D"7"></a>
+      <p style=3D"line-height: 1.4; margin-top: 0; margin-bottom: 20px; c=
+olor: #1e222d; font-family: arial, helvetica, sans-serif; font-size: 16px=
+; text-align: left;" align=3D"left">Two kids (under 18) ride free with ea=
+ch adult buying a fare on Thursday, April 25. This deal applies to all bu=
+ses, trains, and light rail services. Children do not need their own tick=
+ets.</p>
+    </td>
+  </tr>
+</table>
+<h3 style=3D"text-align: center; line-height: 1.1; font-weight: normal; m=
+argin-top: 30px; margin-bottom: 30px; font-family: arial, helvetica, sans=
+-serif; font-size: 14px; color: #125491;" align=3D"center"><strong><a hre=
+f=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxM=
+DUsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3Lm5qdHJhbnNpdC5jb20vP3=
+V0bV9jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmN=
+lPWdvdmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg3MSJ9.Y1ZDWjN=
+2oDCeDx2B1U4YAUAEMytE8PmNFitpmccKLGo/s/1479999573/br/241072625716-l" targ=
+et=3D"_blank" rel=3D"noopener" style=3D"color: #FFFFFF; text-decoration: =
+none; -ms-word-break: break-all; word-break: break-word; -webkit-hyphens:=
+ none; -moz-hyphens: none; hyphens: none; background-color: #05498A; bord=
+er-radius: 4px; border-color: #05498a; border-style: solid; border-width:=
+ 10px 20px;">Buy Tickets</a></strong></h3>
+<table class=3D"govd_hr" cellspacing=3D"0" border=3D"0" align=3D"center" =
+width=3D"100%" cellpadding=3D"0" style=3D"border-collapse: collapse;"><tr=
+ class=3D"govd_hr_inner"><td width=3D"100%"><hr style=3D"color: #DDDDDD; =
+border-top-color: #DDDDDD; border-top-style: solid; border-top-width: 1px=
+; display: block; margin-top: 30px; margin-bottom: 30px; padding: 0;"></t=
+d></tr></table>
+<h2 style=3D"margin-top: 20px; margin-bottom: 10px; line-height: 1.1; fon=
+t-weight: normal; color: #555555; font-family: arial, helvetica, sans-ser=
+if; font-size: 21px; text-align: left;" align=3D"left"><strong><a href=3D=
+"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDYsI=
+nVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vZGVwLm5qLmdvdi9uamZ3L2JlYXJzL2=
+dhcmJhZ2UtbWFuYWdlbWVudC8_dXRtX2NhbXBhaWduPTIwMjQwNDE5X253c2x0ciZ1dG1fbWV=
+kaXVtPWVtYWlsJnV0bV9zb3VyY2U9Z292ZGVsaXZlcnkiLCJidWxsZXRpbl9pZCI6IjIwMjQw=
+NDE5LjkzNjMxODcxIn0.R2o4EJrzchq8zrNLR5rU9VxsKHOaXe0r4nZC3XZyA6M/s/1479999=
+573/br/241072625716-l" target=3D"_blank" rel=3D"noopener" style=3D"color:=
+ #05498A; text-decoration: none; -ms-word-break: break-all; word-break: b=
+reak-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;">Do =
+Not Feed the Bears: Secure Your Trash</a></strong></h2>
+<table class=3D"gd_combo_table" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse: collapse;">
+  <tr>
+    <td>
+      <a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9sa=
+W5rX2lkIjoxMDcsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vZGVwLm5qLmdvdi=
+9uamZ3L2JlYXJzL2dhcmJhZ2UtbWFuYWdlbWVudC8_dXRtX2NhbXBhaWduPTIwMjQwNDE5X25=
+3c2x0ciZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9Z292ZGVsaXZlcnkiLCJidWxsZXRp=
+bl9pZCI6IjIwMjQwNDE5LjkzNjMxODcxIn0.pfgns0Rr7wx9l-cPPkJ0XaSEAVXXkzFMYNt37=
+xNr-tw/s/1479999573/br/241072625716-l" target=3D"_blank" rel=3D"noopener =
+noreferrer" style=3D"color: #05498A; text-decoration: underline; -ms-word=
+-break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hy=
+phens: none; hyphens: none;"><img class=3D"govd_template_image" src=3D"ht=
+tps://content.govdelivery.com/attachments/fancy_images/NJGOV/2024/04/9347=
+063/5396667/noun-black-bear-6567367-11538f_crop.png" style=3D"width: 172p=
+x; height: auto !important; float: right; max-height: auto !important; bo=
+rder: none;" alt=3D"Bear" width=3D"172" height=3D"172" align=3D"right" hs=
+pace=3D"7"></a>
+      <p style=3D"line-height: 1.4; margin-top: 0; margin-bottom: 20px; c=
+olor: #1e222d; font-family: arial, helvetica, sans-serif; font-size: 16px=
+; text-align: left;" align=3D"left">Black bears are out of their winter d=
+ens and foraging for food. Prevent bears from accessing food in your garb=
+age by using bear-resistant trash containers. Reducing food attractants i=
+s crucial to avoid attracting bears to residential areas, which can lead =
+to dangerous interactions.</p>
+<p style=3D"line-height: 1.4; margin-top: 0; margin-bottom: 20px; color: =
+#1e222d; font-family: arial, helvetica, sans-serif; font-size: 16px; text=
+-align: left;" align=3D"left">Though most of New Jersey's black bears liv=
+e in the northwest portion of the State, black bears have been sighted in=
+ all 21 counties. If you see a bear, remain calm, avoid eye contact, and =
+back away slowly. Do not run.</p>
+    </td>
+  </tr>
+</table>
+<h3 style=3D"text-align: center; line-height: 1.1; font-weight: normal; m=
+argin-top: 30px; margin-bottom: 30px; font-family: arial, helvetica, sans=
+-serif; font-size: 14px; color: #125491;" align=3D"center"><strong><a hre=
+f=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxM=
+DgsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vZGVwLm5qLmdvdi9uamZ3L2JlYX=
+JzL2dhcmJhZ2UtbWFuYWdlbWVudC8_dXRtX2NhbXBhaWduPTIwMjQwNDE5X253c2x0ciZ1dG1=
+fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9Z292ZGVsaXZlcnkiLCJidWxsZXRpbl9pZCI6IjIw=
+MjQwNDE5LjkzNjMxODcxIn0.2hLCK_06kJ0QeAXKBleXP1b5xa-BzWkmJEy3-lSBXXA/s/147=
+9999573/br/241072625716-l" target=3D"_blank" rel=3D"noopener" style=3D"co=
+lor: #FFFFFF; text-decoration: none; -ms-word-break: break-all; word-brea=
+k: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; =
+background-color: #05498A; border-radius: 4px; border-color: #05498a; bor=
+der-style: solid; border-width: 10px 20px;">Get More Tips</a></strong></h=
+3>
+<table class=3D"govd_hr" cellspacing=3D"0" border=3D"0" align=3D"center" =
+width=3D"100%" cellpadding=3D"0" style=3D"border-collapse: collapse;"><tr=
+ class=3D"govd_hr_inner"><td width=3D"100%"><hr style=3D"color: #DDDDDD; =
+border-top-color: #DDDDDD; border-top-style: solid; border-top-width: 1px=
+; display: block; margin-top: 30px; margin-bottom: 30px; padding: 0;"></t=
+d></tr></table>
+<h2 style=3D"margin-top: 20px; margin-bottom: 10px; line-height: 1.1; fon=
+t-weight: normal; color: #555555; font-family: arial, helvetica, sans-ser=
+if; font-size: 21px; text-align: left;" align=3D"left"><strong><a href=3D=
+"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDksI=
+nVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3LmN5YmVyLm5qLmdvdi9jb25uZW=
+N0L3dlZWtseS1idWxsZXRpbj91dG1fY2FtcGFpZ249MjAyNDA0MTlfbndzbHRyJnV0bV9tZWR=
+pdW09ZW1haWwmdXRtX3NvdXJjZT1nb3ZkZWxpdmVyeSIsImJ1bGxldGluX2lkIjoiMjAyNDA0=
+MTkuOTM2MzE4NzEifQ.JjIsG6vRmtH0mUIXwvDRVK8d5A5kylb963WMa7xRpZE/s/14799995=
+73/br/241072625716-l" target=3D"_blank" rel=3D"noopener" style=3D"color: =
+#05498A; text-decoration: none; -ms-word-break: break-all; word-break: br=
+eak-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;">New =
+Text Message Scam Targeting New Jersey Residents</a></strong></h2>
+<table class=3D"gd_combo_table" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse: collapse;">
+  <tr>
+    <td>
+      <a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9sa=
+W5rX2lkIjoxMTAsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3LmN5YmVyLm=
+5qLmdvdi9jb25uZWN0L3dlZWtseS1idWxsZXRpbj91dG1fY2FtcGFpZ249MjAyNDA0MTlfbnd=
+zbHRyJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1nb3ZkZWxpdmVyeSIsImJ1bGxldGlu=
+X2lkIjoiMjAyNDA0MTkuOTM2MzE4NzEifQ.EA3fxTkZs2mnSqEDBUsoH1RRIYo61qg0yebVYd=
+p8pbk/s/1479999573/br/241072625716-l" target=3D"_blank" rel=3D"noopener n=
+oreferrer" style=3D"color: #05498A; text-decoration: underline; -ms-word-=
+break: break-all; word-break: break-word; -webkit-hyphens: none; -moz-hyp=
+hens: none; hyphens: none;"><img class=3D"govd_template_image" src=3D"htt=
+ps://content.govdelivery.com/attachments/fancy_images/NJGOV/2024/04/93470=
+74/5396668/noun-fraud-alert-6585655-11538f_crop.png" style=3D"width: 172p=
+x; height: auto !important; float: right; max-height: auto !important; bo=
+rder: none;" alt=3D"Fraud alert" width=3D"172" height=3D"172" align=3D"ri=
+ght" hspace=3D"7"></a>
+      <p style=3D"line-height: 1.4; margin-top: 0; margin-bottom: 20px; c=
+olor: #1e222d; font-family: arial, helvetica, sans-serif; font-size: 16px=
+; text-align: left;" align=3D"left">Fraudulent operators are sending text=
+ messages to some residents requesting payment for unpaid road tolls. If =
+you receive a text claiming you owe an unpaid toll, do <em>not</em> click=
+ on any links or provide personal information. Visit the NJCCIC website f=
+or additional guidance.</p>
+    </td>
+  </tr>
+</table>
+<h3 style=3D"text-align: center; line-height: 1.1; font-weight: normal; m=
+argin-top: 30px; margin-bottom: 30px; font-family: arial, helvetica, sans=
+-serif; font-size: 14px; color: #125491;" align=3D"center"><strong><a hre=
+f=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxM=
+TEsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3LmN5YmVyLm5qLmdvdi9jb2=
+5uZWN0L3dlZWtseS1idWxsZXRpbj91dG1fY2FtcGFpZ249MjAyNDA0MTlfbndzbHRyJnV0bV9=
+tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1nb3ZkZWxpdmVyeSIsImJ1bGxldGluX2lkIjoiMjAy=
+NDA0MTkuOTM2MzE4NzEifQ.PbbjVQB0-SbrgSAGtCnDUqfqP65SO4TZJeKv39NGAGg/s/1479=
+999573/br/241072625716-l" target=3D"_blank" rel=3D"noopener" style=3D"col=
+or: #FFFFFF; text-decoration: none; -ms-word-break: break-all; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; b=
+ackground-color: #05498A; border-radius: 4px; border-color: #05498a; bord=
+er-style: solid; border-width: 10px 20px;">Learn More</a></strong></h3>
+<table class=3D"govd_hr" cellspacing=3D"0" border=3D"0" align=3D"center" =
+width=3D"100%" cellpadding=3D"0" style=3D"border-collapse: collapse;"><tr=
+ class=3D"govd_hr_inner"><td width=3D"100%"><hr style=3D"color: #DDDDDD; =
+border-top-color: #DDDDDD; border-top-style: solid; border-top-width: 1px=
+; display: block; margin-top: 30px; margin-bottom: 30px; padding: 0;"></t=
+d></tr></table>
+</td>
+</tr>
+ =20
+<tr>
+<td id=3D"main-body2" width=3D"100%" data-govdstyle=3D"all" data-govdtitl=
+e=3D"Main Survey" align=3D"center" style=3D"padding: 10px 30px 30px;">
+<p style=3D"line-height: 1.4; margin-top: 5px; margin-bottom: 10px; color=
+: #000000; font-family: arial, helvetica, sans-serif; font-size: 21px; te=
+xt-align: center;" align=3D"center"><strong>Was this email helpful?</stro=
+ng></p>
+<table class=3D"gd_table" style=3D"margin-left: auto; margin-right: auto;=
+ width: 200px; border-collapse: collapse;" border=3D"0" cellpadding=3D"10=
+">
+<tbody>
+<tr>
+<td style=3D"width: 50%;"><a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1Ni=
+J9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTIsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dH=
+BzOi8vaW5ub3ZhdGVuai5qb3Rmb3JtLmNvbS8yMTA2MjQ4NzE5ODY4Njk_dXRtX2NhbXBhaWd=
+uPTIwMjQwNDE5X253c2x0ciZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9Z292ZGVsaXZl=
+cnkiLCJidWxsZXRpbl9pZCI6IjIwMjQwNDE5LjkzNjMxODcxIn0.Ch21RY8JU8Q8o0M0NS1VV=
+0oZ2jxP-26By08WYf9SFlQ/s/1479999573/br/241072625716-l" target=3D"_blank" =
+rel=3D"noopener" style=3D"color: #05498A; text-decoration: underline; -ms=
+-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -m=
+oz-hyphens: none; hyphens: none;"><img class=3D"govd_template_image" src=3D=
+"https://content.govdelivery.com/attachments/fancy_images/NJGOV/2021/03/4=
+238670/noyes-01_original.png" alt=3D"yes it was helpful" width=3D"60" hei=
+ght=3D"60" style=3D"height: auto !important; max-height: auto !important;=
+ border: none;"></a></td>
+<td style=3D"width: 50%;"><a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1Ni=
+J9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTMsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dH=
+BzOi8vaW5ub3ZhdGVuai5qb3Rmb3JtLmNvbS8yMTA2MjU2NzIyODY4NjI_dXRtX2NhbXBhaWd=
+uPTIwMjQwNDE5X253c2x0ciZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9Z292ZGVsaXZl=
+cnkiLCJidWxsZXRpbl9pZCI6IjIwMjQwNDE5LjkzNjMxODcxIn0.4l6TETwNg07zH_W9oTnQO=
+6nQB85WavsopaR8YZXIYQ8/s/1479999573/br/241072625716-l" target=3D"_blank" =
+rel=3D"noopener" style=3D"color: #05498A; text-decoration: underline; -ms=
+-word-break: break-all; word-break: break-word; -webkit-hyphens: none; -m=
+oz-hyphens: none; hyphens: none;"><img class=3D"govd_template_image" src=3D=
+"https://content.govdelivery.com/attachments/fancy_images/NJGOV/2021/03/4=
+238672/noyes-02_original.png" alt=3D"no it was not helpful" width=3D"60" =
+height=3D"60" style=3D"height: auto !important; max-height: auto !importa=
+nt; border: none;"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+<tr>
+<td id=3D"bottom-body" width=3D"100%" data-govdstyle=3D"all" data-govdtit=
+le=3D"Bottom Body" style=3D"background-color: #f2f2f2; padding: 20px 30px=
+ 10px;" bgcolor=3D"#f2f2f2">
+<p style=3D"text-align: center; line-height: 1.4; margin-top: 5px; margin=
+-bottom: 10px; color: #555555; font-family: arial, helvetica, sans-serif;=
+ font-size: 13px;" align=3D"center"><em>Some newsletter content was creat=
+ed with the assistance of generative AI.=A0<strong><a href=3D"https://lnk=
+s.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTQsInVyaSI6ImJwM=
+jpjbGljayIsInVybCI6Imh0dHBzOi8vaW5ub3ZhdGlvbi5uai5nb3Yvc2tpbGxzL2FpLz91dG=
+1fY2FtcGFpZ249MjAyNDA0MTlfbndzbHRyJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1=
+nb3ZkZWxpdmVyeSIsImJ1bGxldGluX2lkIjoiMjAyNDA0MTkuOTM2MzE4NzEifQ.PxD8ubCF2=
+2lJD6LiRn9pIG-y9ljJwTwJX2uRnpU2L1E/s/1479999573/br/241072625716-l" target=
+=3D"_blank" rel=3D"noopener" style=3D"color: #05498A; text-decoration: un=
+derline; -ms-word-break: break-all; word-break: break-word; -webkit-hyphe=
+ns: none; -moz-hyphens: none; hyphens: none;">Learn more</a>.</strong></e=
+m></p>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<!--[if mso]>
+</td>
+</tr>
+</table>
+<![endif]-->
+
+</td>
+</tr>
+</table></td></tr></table>
+ =20
+
+
+<div id=3D"mail_footer">
+    <table style=3D"background: #EEEEEE;" width=3D"100%" cellspacing=3D"0=
+" cellpadding=3D"0" align=3D"center" bgcolor=3D"#EEEEEE">
+<tbody>
+<tr>
+<td style=3D"background: #EEEEEE; font-family: arial, helvetica, sans-ser=
+if !important; font-size: 13px; text-align: center; padding: 20px 0 10px =
+0;" align=3D"center" bgcolor=3D"#EEEEEE"><font face=3D"arial,helvetica,sa=
+ns-serif">Stay Connected with The State of New Jersey:</font></td>
+</tr>
+<tr>
+<td style=3D"background: #EEEEEE; padding: 10px;" align=3D"center" bgcolo=
+r=3D"#EEEEEE"><font face=3D"arial,helvetica,sans-serif"><a href=3D"https:=
+//lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTUsInVyaSI6=
+ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9nb3Zlcm5vcnBoa=
+WxtdXJwaHkvP3V0bV9jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbC=
+Z1dG1fc291cmNlPWdvdmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg=
+3MSJ9.MXOfrq1esoqfgix3GTp24eow9zViGcBb4f0u3dEVmJI/s/1479999573/br/2410726=
+25716-l" target=3D"_blank" rel=3D"noopener"><img src=3D"https://content.g=
+ovdelivery.com/attachments/fancy_images/implementation/2016/02/754187/fac=
+ebook_original.png" alt=3D"Facebook" width=3D"25"></a>=A0 <a href=3D"http=
+s://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTYsInVyaS=
+I6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vdHdpdHRlci5jb20vR292TXVycGh5P3V0bV9=
+jYW1wYWlnbj0yMDI0MDQxOV9ud3NsdHImdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWdv=
+dmRlbGl2ZXJ5IiwiYnVsbGV0aW5faWQiOiIyMDI0MDQxOS45MzYzMTg3MSJ9.szRpkr6_-SIF=
+V-BhSqgzk1kwT0-0qDcVs5XTeo1BD84/s/1479999573/br/241072625716-l" target=3D=
+"_blank" rel=3D"noopener"><img src=3D"https://content.govdelivery.com/att=
+achments/fancy_images/implementation/2016/02/754151/twitter_original.png"=
+ alt=3D"Twitter" width=3D"25"></a>=A0 <a href=3D"https://lnks.gd/l/eyJhbG=
+ciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTcsInVyaSI6ImJwMjpjbGljayIsIn=
+VybCI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vZ292bXVycGh5Lz91dG1fY2FtcGFpZ24=
+9MjAyNDA0MTlfbndzbHRyJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1nb3ZkZWxpdmVy=
+eSIsImJ1bGxldGluX2lkIjoiMjAyNDA0MTkuOTM2MzE4NzEifQ.fv5OKOZKINZvaDBaD0fsCY=
+BpucVRiNHwSNcAkXj9Vzw/s/1479999573/br/241072625716-l" target=3D"_blank" r=
+el=3D"noopener"><img src=3D"https://public.govdelivery.com/banners/GOVDEL=
+IVERY/instagram.gif" alt=3D"Instagram" width=3D"25" height=3D"25"></a>=A0=
+</font></td>
+</tr>
+<tr>
+<td style=3D"background: #EEEEEE; text-align: center; font-family: arial,=
+ helvetica, sans-serif; font-size: 13px; padding: 10px 0 20px 0;" bgcolor=
+=3D"#EEEEEE">
+<font face=3D"arial,helvetica,sans-serif">SUBSCRIBER SERVICES:</font><br>=
+<font face=3D"arial,helvetica,sans-serif"><a href=3D"https://lnks.gd/l/ey=
+JhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTgsInVyaSI6ImJwMjpjbGljay=
+IsInVybCI6Imh0dHBzOi8vcHVibGljLmdvdmRlbGl2ZXJ5LmNvbS9hY2NvdW50cy9OSkdPVi9=
+zdWJzY3JpYmVyL2VkaXQ_cHJlZmVyZW5jZXM9dHJ1ZSN0YWIxIiwiYnVsbGV0aW5faWQiOiIy=
+MDI0MDQxOS45MzYzMTg3MSJ9.o5lULcDfXhEKMPcoUiskFprW8HYmuWrG-pbNyw9VvCY/s/14=
+79999573/br/241072625716-l" title=3D"Manage Subscriptions">Manage Subscri=
+ptions</a> =A0|=A0 <a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJx=
+dWVyeV9wYXJhbXMiOlsidmVyaWZpY2F0aW9uIiwiZGVzdGluYXRpb24iXSwiYnVsbGV0aW5fb=
+Glua19pZCI6MTE5LCJ1cmkiOiJicDI6Y2xpY2siLCJ1cmwiOiJodHRwczovL3B1YmxpYy5nb3=
+ZkZWxpdmVyeS5jb20vYWNjb3VudHMvTkpHT1Yvc3Vic2NyaWJlci9vbmVfY2xpY2tfdW5zdWJ=
+zY3JpYmUiLCJidWxsZXRpbl9pZCI6IjIwMjQwNDE5LjkzNjMxODcxIn0.q_WfWc2lBPjfNTpA=
+8UYWUCwGARJgUcuu7H_-YHZlMbo/s/1479999573/br/241072625716-l?verification=3D=
+5.d0f4c8b0304d5638309c9a1bf290ea7b&destination=3Djosh%40josh.com" title=3D=
+"Unsubscribe from All Topics">Unsubscribe All</a> =A0|=A0 <a href=3D"http=
+s://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMjAsInVyaS=
+I6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vc3Vic2NyaWJlcmhlbHAuZ292ZGVsaXZlcnk=
+uY29tLyIsImJ1bGxldGluX2lkIjoiMjAyNDA0MTkuOTM2MzE4NzEifQ.jBMQmuPWu2G-D7vp3=
+4nyQ7cKCfVqelmw42Qco-imW8Q/s/1479999573/br/241072625716-l">Help</a></font=
+>
+</td>
+</tr>
+</tbody>
+</table>
+<style type=3D"text/css">body .abe-column-block {min-height: 0px;}</style=
+>
+
+</div>
+<div id=3D"tagline">
+    <table style=3D"border-collapse: collapse; margin: 0px auto; width: 1=
+00%;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding: 0 10px 0 10px;" valign=3D"top">
+<table class=3D"mobile-tagline" style=3D"border-collapse: collapse; margi=
+n: 0px auto; width: 100%;" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"right">
+<tbody>
+<tr>
+<td style=3D"padding: 10px 0 0 0;" colspan=3D"2" valign=3D"top"><hr></td>=
+
+</tr>
+<tr>
+<td style=3D"padding: 10px 5px 10px 0;" align=3D"left" valign=3D"top"><sp=
+an style=3D"color: #757575; font-size: 10px; font-family: arial, helvetic=
+a, sans-serif;">This email was sent to josh@josh.com using GovDelivery Co=
+mmunications Cloud on behalf of: The State of New Jersey =B7=A0<br>PO Box=
+ 001=A0=B7 Trenton, NJ 08625</span></td>
+<td style=3D"width: 95px; padding-top: 10px;" align=3D"right" valign=3D"t=
+op" width=3D"95"><a href=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidW=
+xsZXRpbl9saW5rX2lkIjoxMjEsInVyaSI6ImJwMjpjbGljayIsInVybCI6Imh0dHBzOi8vc3V=
+ic2NyaWJlcmhlbHAuZ3JhbmljdXMuY29tLz91dG1fY2FtcGFpZ249MjAyNDA0MTlfbndzbHRy=
+JnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1nb3ZkZWxpdmVyeSIsImJ1bGxldGluX2lkI=
+joiMjAyNDA0MTkuOTM2MzE4NzEifQ.IZ4XldeEwj1N3PP84lAqPe2TAkxRRj_zOd9F0b5NOSg=
+/s/1479999573/br/241072625716-l" target=3D"_blank" rel=3D"noopener"><img =
+src=3D"https://content.govdelivery.com/images/govd-logo-dark.png" border=3D=
+"0" alt=3D"GovDelivery logo" width=3D"95" height=3D"27" align=3D"right"><=
+/a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<IMG SRC=3D"https://links.govdelivery.com/track?enid=3DZWFzPTEmYnVsbGV0aW=
+5yZWNpcGllbnRpZD0yNDEwNzI2MjU3MTYtbCZzdWJzY3JpYmVyaWQ9MTQ3OTk5OTU3MyZtc2l=
+kPSZhdWlkPSZtYWlsaW5naWQ9MjAyNDA0MTkuOTM2MzE4NzEmbWVzc2FnZWlkPU1EQi1QUkQt=
+QlVMLTIwMjQwNDE5LjkzNjMxODcxJmRhdGFiYXNlaWQ9MTAwMSZ0eXBlPW9wZW4mc2VyaWFsP=
+TE2ODA4MzUxJmVtYWlsaWQ9am9zaEBqb3NoLmNvbSZ1c2VyaWQ9am9zaEBqb3NoLmNvbSZ0YX=
+JnZXRpZD0mZmw9Jm12aWQ9JmV4dHJhPSYmJg=3D=3D" WIDTH=3D"1" HEIGHT=3D"1" STYL=
+E=3D"border-width:0; border-style:hidden;" ALT=3D""/></body>
+</html>
+=0A
+------=_NextPart_C31_2AE1_3CB0851D.7F1DEAD6--
+

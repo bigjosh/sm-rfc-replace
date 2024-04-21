@@ -1,0 +1,202 @@
+Return-Path: <accounts@returns.bulk.yahoo.com>
+Received: from sonic325-8.consmr.mail.bf2.yahoo.com (sonic325-8.consmr.mail.bf2.yahoo.com [74.6.129.134]) by mail.josh.com with SMTP
+	(version=TLS\Tls12
+	cipher=Aes256 bits=256);
+   Fri, 19 Apr 2024 17:41:27 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cc.yahoo-inc.com; s=fz2048; t=1713562886; bh=ADVuNdLVke1m0tHHXRVCvJ2fowS6MIiIbMCBqn6kZh8=; h=Date:From:Reply-To:To:Subject:From:Subject:Reply-To; b=FihCTe4JBkLsTTtJjvXm7Rj7mzTY5kKmuaaCcVMG0GbNJ6SQq5zyxJECY/IGPHzdQfFwrmO3Mh5S+v+t9wJQVoXrNvkjQo6MgUrL4u3p0rL/8GgCztkskSMdwIqETwBqvvhBdkvwjuTYnNG4RA+OVGmB3k8SybDh4ZOe/LlcM2lYJoWjq9x7N63j8ewwA38Cgj9zeXJUF7pY4tmW5ko8NohkhmChF27Zvp/jRZ+b151VpjwXg8GMstxaXyTNLikx8+9vj3CNQIFrVYKkbHW1NwvTuEPkik2XOGcJskIIjWWGZu52uO7R+3ZufVYBw5IiTbP1e2XMHthHUhAE27GDEg==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1713562886; bh=cRnbC3wOYKncWkjkOAG+D19JLp1PFodN2kE2pY0SD1u=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=VR183zmjY1uv3otNcPwnde/VYYzSeWpJbY1nVSC2zAhEpz82WRSw/uJNTmCCRvfqPPWc998I3oHrMuEiuXVvfWVl30uVwmz6trrm8RrMRHmosEENrhbYuAFXzicCqwbkcRjydfw95Ntfvkk6lM1RwH+/jRcCapRIlIuvUOg9Mbouw3b5dW1N8AwSbUHqL9nXh14WWzl7tC0P59UKdYvpZ92ajxft8dSi1y1qVjs9FdFkRb3dfSNYXWdUBbFNNuzPX/XQ0J0RZo5V8AnAXffIm9ZOZc+Wn/zQyyuM6whPMI8lxRr+zb6oaa72tJNJtVJlrW1YoFbC6d7dg1oG0KfZvQ==
+X-Sonic-MF: accounts@returns.bulk.yahoo.com
+X-Sonic-ID: fd6a6b03-a511-4f34-b1a6-cc712b6ef001
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic325.consmr.mail.bf2.yahoo.com with HTTP; Fri, 19 Apr 2024 21:41:26 +0000
+Date: Fri, 19 Apr 2024 21:41:24 +0000 (UTC)
+From: Yahoo <no-reply@cc.yahoo-inc.com>
+Reply-To: Yahoo <no-reply@cc.yahoo-inc.com>
+To: yhoo@junk.josh.com
+Message-ID: <1686967703.17702.1713562884378@be123.member.bf1.yahoo.com>
+Subject: Your Yahoo verification code is 755272
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        html {
+        -webkit-text-size-adjust:none;
+        }
+        body {
+        width:100%;
+        margin:0 auto;
+        padding:0;
+        }
+        p {
+        width: 280px;
+        line-height: 16px;
+        letter-spacing: 0.5px;
+       }
+       @font-face {
+            font-family: 'YahooSans';
+            src: url(https://s.yimg.com/os/fontserver/YahooSans/Regular.woff2) format('woff2'),url(https://s.yimg.com/os/fontserver/YahooSans/Regular.woff) format('woff');
+            font-style: normal;
+            font-display: fallback
+        }
+
+        @font-face {
+            font-family: 'YahooSans';
+            src: url(https://s.yimg.com/os/fontserver/YahooSans/Medium.woff2) format('woff2'),url(https://s.yimg.com/os/fontserver/YahooSans/Medium.woff) format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: fallback
+        }
+
+        @font-face {
+            font-family: 'YahooSans';
+            src: url(https://s.yimg.com/os/fontserver/YahooSans/Semibold.woff2) format('woff2'),url(https://s.yimg.com/os/fontserver/YahooSans/Semibold.woff) format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: fallback
+        }
+    </style>
+    <title>Your Yahoo verification code is 755272</title>
+</head>
+<body style="font-family:'YahooSans', Arial;">
+<div>
+    <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#f4f3f8" style="table-layout:fixed; padding: 5px 10px;" dir="ltr">
+        <tbody>
+        <tr>
+            <td align="center" valign="top" style="min-width:420px;">
+                <!-- Email header table -->
+                <table cellspacing="0" cellpadding="0" width="420" height="50" bgcolor="#ffffff">
+                    <tr>
+                        <td align="left" style="padding: 30px;">
+                            <img src="https://s.yimg.com/rz/stage/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage_2x.png" style="display:block; border:0;" width="100" alt="Yahoo"/>
+                        </td>
+                    </tr>
+                </table>
+                <!-- Email body table -->
+                <table cellspacing="0" cellpadding="0" width="420" bgcolor="#ffffff">
+                    <!-- Salutation row -->
+                    <tr>
+                        <td style="padding-left: 30px;">
+                            <div style="font-size: 12px;">
+                                <p style="color: #000000; margin:0px;"><b>Hi Joshua,</b></p>
+                                <p style="color: #000000; margin:0px; line-height:20px;">bigjoshlevine@yahoo.com</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- Main content row -->
+                    <tr>
+                        <td style="padding-left: 30px;">
+                            <!-- Main content table -->
+                            <table cellspacing="0" cellpadding="0" width="390" style="font-size: 12px; line-height: 16px;">
+                                <tr>
+                                    <td valign="middle" height="72">
+                                        <div style=" font-size: 12px; color: #26282A; letter-spacing: 0.5px; line-height: 16px; margin-top: 20px";>
+                                            <p style="margin: 0px"><b>Are you trying to sign in?</b></p>
+                                            <p style="margin: 0px">If so, use this code to finish signing in.</p>
+                                            <p style="font-size: 20px; margin-top: 20px">
+                                                <b><b>755272</b></b>
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Device info row -->
+                    <tr>
+                        <td style="padding-left: 30px;">
+                            <!-- Device info table -->
+                            <p style="font-family: 'Yahoo Sans', Arial; font-size: 12px; color: #26282A; letter-spacing: 0.5px; margin-top: 20px;">
+                                <b>This sign in attempt was made on:</b>
+                            </p>
+                            <table cellspacing="0" cellpadding="0" width="390" style="font-family: 'YahooSans', Arial;
+                            word-wrap: break-word;
+                            font-size: 12px;
+                            line-height: 24px;
+                            table-layout: fixed;
+                            letter-spacing: 0;
+                            color: #9A9A9A;">
+                                <tr>
+                                    <td style="width: 20%">
+                                        <p style="width: 78px">Device</p>
+                                    </td>
+                                    <td style="color: #26282A;
+                                        letter-spacing: -0.22px;">
+                                        chrome, windows nt
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><p style="width: 78px">When</p></div>
+                                    </td>
+                                    <td style="color: #26282A;
+                                        letter-spacing: -0.22px;">
+                                        <div>April 19, 2024 at 2:41:24 PM PDT</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="width: 78px">Where*</p>
+                                    </td>
+                                    <td style="color: #26282A; letter-spacing: -0.22px;">
+                                        <p style="margin: 0px">New York, United States</p>
+                                        <p style="line-height: 1; margin: 0px; font-size: 9px;">71.190.191.175</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- Additional info row -->
+                    <tr>
+                        <td style="padding-left: 30px;">
+                            <!-- Additional info table -->
+                            <div style="font-family: 'YahooSans', Arial;
+                                        font-size: 12px;
+                                        color: #26282A;
+                                        line-height: 16px;">
+                                <p style="margin-top: 20px; margin-bottom: 0px;"><b>Didn&rsquo;t sign in recently?</b></p>
+                                <p style="margin-top: 0px; margin-bottom: 0px;">Review your account activity and remove the devices and apps that you don&rsquo;t recognize.</p>
+                                <a href="https://login.yahoo.com/account/activity" target="_blank" style="color:#3492ff;text-decoration:none;">https://login.yahoo.com/account/activity</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- From row -->
+                    <tr>
+                        <td style="padding-left: 30px;">
+                            <div style="font-family: 'YahooSans', Arial;
+                                   font-size: 12px;
+                                   color: #000000;
+                                   letter-spacing: 0.5px;
+                                   line-height: 16px;">
+                                <p style="margin-top: 20px; margin-bottom: 0px;">
+                                    Thanks,
+                                </p>
+                                <p style="margin: 0px;">
+                                    <b>Yahoo</b>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!-- Footer -->
+                <table cellspacing="0" cellpadding="0" width="420" bgcolor="#ffffff" style="font-size:10px; line-height:14px; color:#000000; text-align:left;">
+                    <tr>
+                        <td style="padding-left: 30px; color: #878C91;">
+                            <div style="margin-top: 20px; margin-bottom: 3px; width: 250px;">
+                                <p>We&rsquo;ll never ask you for your password in an email. If you don&rsquo;t trust a link in an email, sign in directly on yahoo.com.</p>
+                            </div>
+                            <div style="margin-top: 10px; margin-bottom:20px">
+                                <p>Location is approximate based on the IP address it originated from.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

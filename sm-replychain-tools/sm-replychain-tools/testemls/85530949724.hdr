@@ -1,0 +1,16 @@
+Written 
+josh@joshreply.com
+bigjosh@gmail.com
+retry: 0;04/18/2024 18:37:32
+from: josh@joshreply.com
+auth: josh@joshreply.com
+spamcheck: _DMARC=0,skipped - DMARC Disabled
+creationdate: 04/18/2024 18:37:32
+notify: bigjosh@gmail.com=
+containsLocalDeliveries: False
+connectedip: 71.190.191.175
+helo: JOSHWIN11INTC13
+connectedhostname: pool-71-190-191-175.nycmny.fios.verizon.net
+smtpSessionId: 33155805
+dmarcResult: Skipped (DMARC Disabled)
+
