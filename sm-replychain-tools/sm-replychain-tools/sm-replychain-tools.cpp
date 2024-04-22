@@ -306,6 +306,26 @@ std::string extractFilenameStem(const std::string& path) {
     return path.substr(filenameStart);
 }
 
+// Extract just the email address part from an RFC5322 "mailbox" which can include an option leading human name and angle braces.
+// Returns all uppercase
+
+std::string extractEmailPart(std::string mailboxName) {
+    std::regex emailRegex(R"(([\w.-]+@[\w.-]+\.\w+))");  // Regular expression to match a typical email address
+    std::smatch matches;
+
+    if (std::regex_search(mailboxName, matches, emailRegex)) {
+
+        std::string address = matches[0];
+
+        // Convert to all uppercase
+        std::transform(address.begin(), address.end(), address.begin(), ::toupper);
+
+        return address;  // Return the first match, which should be the email
+    }
+
+    return "";  // Return an empty string if no email was found
+}
+
 // Function to transform EML file based on specified conditions
 void transformEMLFile( const std::string logFileName , const std::string logDir ,  const char* filePath, 
     const char* magicReplytoEmailAddress, const char* newEmailAddressFmtString , unsigned int hashSeed) {
