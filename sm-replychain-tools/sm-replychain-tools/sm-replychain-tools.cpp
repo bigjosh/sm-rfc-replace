@@ -21,6 +21,13 @@
 #include <algorithm>
 #include <random>
 
+// This is defined by the compiler if we are compiling in debug configuration
+#ifdef _DEBUG
+    const BOOL debugMode = true;
+#else
+    const BOOL debugMode = false;
+#endif
+
 std::string generateRandomNineDigitNumberWithLeadingZeros() {
     // Random number generator using the Mersenne Twister engine
     std::random_device rd;  // Obtain a random number from hardware
@@ -101,7 +108,7 @@ void appendLog(const std::string& fileName, const std::string& message1 , const 
 
 
 // Function to calculate the hash value of a string using DJB2 algorithm
-std::string MakeHash(const std::string& txt, unsigned long hashSeed) {
+static std::string MakeHash(const std::string& txt, unsigned long hashSeed) {
     unsigned long hash = hashSeed;
 
     for (size_t nC = 0; nC < txt.length(); ++nC) {
@@ -118,6 +125,15 @@ std::string MakeHash(const std::string& txt, unsigned long hashSeed) {
 void appendLog(const std::string& fileName, const std::string& message1, const std::string& message2) {
 
     appendLog(fileName, message1, message2, "");
+
+}
+
+
+inline void debugMsg(const std::string& fileName, const std::string& message1, const std::string& message2) {
+
+    if (debugMode) {
+        appendLog(fileName, message1, message2, "");
+    }
 
 }
 
@@ -529,21 +545,23 @@ int main( int argc , char ** argv)
     std::string logDirNameStr;
     std::string logFileNameStr;
 
+    debugMsg(logFileNameStr, "Start. argc=", std::to_string( argc ) );
+
     if (argc == 6) {
+        debugMsg(logFileNameStr, "Logging on.", "");
+
         logDirNameStr = argv[5];
         logFileNameStr = logDirNameStr + "log.txt";
     }
 
     if (!quickCheckEmailFileForReplyTo(  logFileNameStr, fileName, magicReplytoAddress)) {
-        std::cout << "No." << std::endl;
+        debugMsg(logFileNameStr, "No match.", magicReplytoAddress );
     } else {
 
         // If we get here, then we passed the preliminary quick check and now we can take our time to process the email.
-        std::cout << "Yes." << std::endl;
-
+        debugMsg(logFileNameStr, "Match." , magicReplytoAddress);
         appendLog(logFileNameStr, "Process", fileName);
         transformEMLFile( logFileNameStr , logDirNameStr , fileName , magicReplytoAddress, replacementAddressFmtStr , hashSeed);
-        std::cout << "Done" << std::endl;
 
     }
 
