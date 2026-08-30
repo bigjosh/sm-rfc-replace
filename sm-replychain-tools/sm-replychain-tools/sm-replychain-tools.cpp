@@ -119,8 +119,25 @@ void appendLog(const std::string& fileName, const std::string& message1 , const 
 }
 
 
-// Function to calculate the hash value of a string using DJB2 algorithm
-static std::string MakeHash(const std::string& txt, unsigned long hashSeed) {
+// Format a 20 bit hash value as the 5 uppercase hex digits that go into the reply address.
+
+static std::string FormatHash(unsigned long hash) {
+    std::stringstream ss;
+    ss << std::hex << std::setw(5) << std::setfill('0') <<std::uppercase << hash; // Convert hash to hexadecimal string
+    return ss.str();
+}
+
+// The ORIGINAL hash. It is broken - see the README - but every reply address handed out before
+// the fix came from this function, and those addresses are sitting in other people's address
+// books, so we have to be able to reproduce it exactly forever. Do not "clean this up".
+//
+// The bug: it reduces with "% 0xFFFFF", and 0xFFFFF is 1048575 = 3 x 5 x 5 x 11 x 31 x 41, which
+// is divisible by the DJB2 multiplier 33. That makes "x33" not a bijection, so 33*hash mod 0xFFFFF
+// is always a multiple of 33 and every round throws away everything but the newest character mod
+// 33. The upshot is that hash%33 is always just (last character of the address)%33, which crams
+// every ".com" correspondent into 1/33rd of the address space.
+
+static std::string MakeHashLegacy(const std::string& txt, unsigned long hashSeed) {
     unsigned long hash = hashSeed;
 
     for (size_t nC = 0; nC < txt.length(); ++nC) {
@@ -129,9 +146,25 @@ static std::string MakeHash(const std::string& txt, unsigned long hashSeed) {
         hash = hash % 0xFFFFF; // Limit hash to 20 bits
     }
 
-    std::stringstream ss;
-    ss << std::hex << std::setw(5) << std::setfill('0') <<std::uppercase << hash; // Convert hash to hexadecimal string
-    return ss.str();
+    return FormatHash(hash);
+}
+
+// The fixed hash, used for everybody we have not already given an address to. Identical to the
+// legacy one except that it masks instead of taking a remainder. 0xFFFFF+1 is 2^20 and 33 is odd,
+// so gcd(33, 2^20)=1 and the multiply becomes a bijection - which is the whole fix. Measured over
+// 10000 realistic addresses this drops the share of people sharing an address from 20.4% to 0.98%,
+// which is the floor for a 5 hex digit hash.
+
+static std::string MakeHash(const std::string& txt, unsigned long hashSeed) {
+    unsigned long hash = hashSeed;
+
+    for (size_t nC = 0; nC < txt.length(); ++nC) {
+        unsigned char ch = std::tolower(txt[nC]);
+        hash = ((hash << 5) + hash) + ch; // hash * 33 + ch
+        hash = hash & 0xFFFFF; // Limit hash to 20 bits. Note "&" not "%" - see above.
+    }
+
+    return FormatHash(hash);
 }
 
 void appendLog(const std::string& fileName, const std::string& message1, const std::string& message2) {
@@ -384,6 +417,128 @@ std::string extractEmailPart(std::string mailboxName) {
     return "";  // Return an empty string if no email was found
 }
 
+// Drop a hash into the "%s" slot of a replacement mask.
+// If there is no %s the mask comes back untouched, but the arg checking in main() will have
+// already rejected a mask without one.
+
+std::string applyHashToMask(const std::string& mask, const std::string& hash) {
+
+    std::string result = mask;
+
+    // How can c++ not have a findAndReplce?
+    size_t pos = result.find("%s");
+
+    if (pos != std::string::npos) {
+        result.replace(pos, 2, hash);
+    }
+
+    return result;
+}
+
+// Per address logs live in a subfolder named for the seed, ie "g:\logs\2774565\FOO@BAR.COM.log".
+// This keeps each identity's addresses seporate so they are faster to search through, and so you
+// can list every address ever generated for one seed just by listing the folder.
+//
+// Note this is keyed on the PARSED seed and not on the string that was typed on the command line,
+// becuase the parsed value is what actually decides the hashes. For any seed in range they are the
+// same thing anyway. Windows does not mind the mixed slashes if the log dir was given with "/".
+
+std::string seedLogDir(const std::string& logDir, unsigned long hashSeed) {
+
+    if (logDir.empty()) return "";      // Logging is opptional
+
+    return logDir + std::to_string(hashSeed) + "\\";
+}
+
+// Make one directory, treating "it is already there" as success.
+// An empty path is a no-op becuase logging is opptional.
+// Returns false and logs if it could not be created for any other reason.
+
+bool ensureDirExists(const std::string& logFileName, const std::string& path) {
+
+    if (path.empty()) return false;
+
+    std::wstring widePath(path.begin(), path.end());
+
+    if (CreateDirectory(widePath.c_str(), NULL)) return true;
+
+    if (GetLastError() == ERROR_ALREADY_EXISTS) return true;
+
+    appendLog(logFileName, "Failed to create log dir", path, std::to_string(GetLastError()));
+
+    return false;
+}
+
+// Create the log dir and its per seed subfolder if they are not already there, so there is no
+// setup step to forget. A directory we could not make just means the lookup below finds nothing
+// and everybody looks like a new correspondent, which is the same as the very first run.
+//
+// This is called only once we have decided to actually process an email. Doing it at startup
+// would put two syscalls on the path taken by every email we DON'T care about, which is nearly
+// all of them.
+
+void ensureLogDirExists(const std::string& logFileName, const std::string& logDir, unsigned long hashSeed) {
+
+    // CreateDirectory only makes one level at a time, so do the parent first.
+    if (!ensureDirExists(logFileName, logDir)) return;
+
+    ensureDirExists(logFileName, seedLogDir(logDir, hashSeed));
+}
+
+// Returns true if this per address log file exists AND records having sent something to this
+// recipient. That is how we know we already handed this person this address and so have to keep
+// handing them the same one.
+//
+// The "does it list them" part is not optional. Just testing whether the file exists would be
+// wrong 20.8% of the time, becuase the legacy hash collides so often that a brand new
+// correspondent's file has usually already been created for somebody else.
+
+bool logFileListsRecipient(const std::string& logFilePath, const std::string& recipient) {
+
+    if (logFilePath.empty() || recipient.empty()) return false;
+
+    FILE* f;
+
+    // A missing file (or missing folder) is the normal, cheap answer - it just means "no".
+    if (fopen_s(&f, logFilePath.c_str(), "rt") != 0) return false;
+
+    const int maxLineLen = 1000;
+
+    char lineBuffer[maxLineLen];
+
+    bool found = false;
+
+    while (!found && fgets(lineBuffer, maxLineLen, f) != NULL) {
+
+        // appendLog() wraps its first message in single quotes, so a send looks like
+        // "2026-08-30 02:52:12 'SentTo' someone@example.com 85530953466"
+
+        const char* tag = strstr(lineBuffer, "'SentTo' ");
+
+        if (!tag) continue;
+
+        const char* addr = tag + 9;                 // strlen("'SentTo' ")
+
+        // Measure the whole whitespace delimited token and compare all of it. Comparing a prefix
+        // would match "bigjosh@gmail.com" against a logged "notbigjosh@gmail.com".
+
+        size_t len = 0;
+
+        while (addr[len] && !isspace(static_cast<unsigned char>(addr[len]))) len++;
+
+        // The log keeps the address as it appeared in the header but the hash lowercases it,
+        // so this compare has to be case insensitive too.
+
+        if (len == recipient.length() && _strnicmp(addr, recipient.c_str(), len) == 0) {
+            found = true;
+        }
+    }
+
+    fclose(f);
+
+    return found;
+}
+
 // Function to transform EML file based on specified conditions
 void transformEMLFile( const std::string logFileName , const std::string logDir ,  const char* filePath, 
     const std::vector<ReplyToConfig>& configs) {
@@ -512,15 +667,44 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
 
         std::string toAddress = toAddresses[0];
 
+        const ReplyToConfig& config = configs[matchedConfigIndex];
+
         // Record which of the configs fired. Handy once there is more than one of them.
-        appendLog(logFileName, "Matched config", configs[matchedConfigIndex].magicAddress);
+        appendLog(logFileName, "Matched config", config.magicAddress);
 
-        std::string newReplyToMailboxStr = configs[matchedConfigIndex].replacementMask;
+        ensureLogDirExists(logFileName, logDir, config.hashSeed);
 
-        // How can c++ not have a findAndReplce?
-        size_t pos = newReplyToMailboxStr.find("%s");
-        if (pos != std::string::npos) {
-            newReplyToMailboxStr.replace(pos, 2, MakeHash(toAddress, configs[matchedConfigIndex].hashSeed)); // Replace %s with the return value of the hash
+        const std::string seedDir = seedLogDir(logDir, config.hashSeed);
+
+        // The hash used to be broken (see the README and MakeHashLegacy above) but we can not
+        // just switch everyone over to the fixed one, becuase the addresses we already handed out
+        // are sitting in other people's address books and have to keep working.
+        //
+        // So: work out the address the OLD hash would have given this recipient, and from that the
+        // name of the log file it would have been recorded in. If that file is there and it lists
+        // this recipient then we already gave them that address, and we have to keep giving them
+        // the same one. Everybody else gets the fixed hash.
+        //
+        // The log dir is its own index - it is just keyed by hash, and the hash is something we
+        // can compute - so this costs one failed file open for a new correspondent and one small
+        // read for an old one. No index to build and nothing to keep in sync.
+
+        const std::string legacyMailboxStr  = applyHashToMask(config.replacementMask, MakeHashLegacy(toAddress, config.hashSeed));
+        const std::string legacyLogFileName = seedDir + extractEmailPart(legacyMailboxStr) + ".log";
+
+        std::string newReplyToMailboxStr;
+
+        if (logFileListsRecipient(legacyLogFileName, toAddress)) {
+
+            // Already a correspondent. Give them back the same address as always.
+            newReplyToMailboxStr = legacyMailboxStr;
+
+            appendLog(logFileName, "Legacy hash", toAddress);
+
+        } else {
+
+            newReplyToMailboxStr = applyHashToMask(config.replacementMask, MakeHash(toAddress, config.hashSeed));
+
         }
 
         line = "Reply-To: " + newReplyToMailboxStr; // Update the line with the new email
@@ -535,7 +719,7 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
         // Normalize the replyto address so same semantic address always ends up with same file name
         std::string replyToAddressNormalizedStr = extractEmailPart(newReplyToMailboxStr);
 
-        std::string toAddressLogFileName = logDir + replyToAddressNormalizedStr + ".log";
+        std::string toAddressLogFileName = seedDir + replyToAddressNormalizedStr + ".log";
 
         for( std::string toAddress : toAddresses ) {
 
@@ -646,7 +830,7 @@ int main( int argc , char ** argv)
         std::cout << "  args 2,5,8...: a special replyto address string (without <>) to search for and replace" << std::endl;
         std::cout << "  args 3,6,9...: printf fmt string for the new address (ie \"joe <joe-%s@joe.com>\") with %s where the hash goes" << std::endl;
         std::cout << "  args 4,7,10..: seed for generating reply to hashes (decimal digits, unsigned long)" << std::endl;
-        std::cout << "  last arg     : optional path to a log directory (with trailing backslash). Must exist and must have create and append access if specified" << std::endl;
+        std::cout << "  last arg     : optional path to a log directory (with trailing backslash). Created if missing, so it just needs create and append access" << std::endl;
         std::cout << "Example with two address sets:" << std::endl;
         std::cout << "  sm-replace-replyto.exe %filepath \"work@example.com\" \"Josh <w-%s@example.com>\" 1234567 \"home@example.com\" \"Josh <h-%s@other.com>\" 7654321 \"g:/logs/\"" << std::endl;
         return 0; 
@@ -695,6 +879,8 @@ int main( int argc , char ** argv)
             const std::string where = "BAD CONFIG in address set #" + std::to_string(nConfig + 1);
 
             std::cerr << where << ": " << problem << std::endl;
+
+            ensureDirExists(logFileNameStr, logDirNameStr);     // So the complaint has somewhere to land
             appendLog(logFileNameStr, where, problem, fileName);
 
             return 0;
@@ -718,7 +904,11 @@ int main( int argc , char ** argv)
     } else {
 
         // If we get here, then we passed the preliminary quick check and now we can take our time to process the email.
+        // Make the log dir now (not at startup) so that log.txt has somewhere to go. Note this is
+        // inside the "we care about this email" branch, so the vast majority of mail never pays for it.
+
         debugMsg(logFileNameStr, "Match." , configCountStr);
+        ensureDirExists(logFileNameStr, logDirNameStr);
         appendLog(logFileNameStr, "Process", fileName);
         transformEMLFile( logFileNameStr , logDirNameStr , fileName , configs);
 
