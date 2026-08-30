@@ -11,7 +11,7 @@ should work with any email server if you can figure out how to set it up to call
 In SmarterMail you do this under Settings->General. You turn on command line program and put something like this as the command line...
 
 ```
-c:\bin\sm-replace-replyto.exe %filepath "miskabibble@diddywats.com" "Josh Doe <new-%s@mydomain.com>" 53431184516 "g:/logs/"
+c:\bin\sm-replace-replyto.exe %filepath "miskabibble@diddywats.com" "Josh Doe <new-%s@mydomain.com>" 3831184516 "g:/logs/"
 ```   
 
 ...where...
@@ -32,6 +32,23 @@ anything here as long as it is the same in both places.
 
 `"Josh Doe <new-%s@mydomain.com>"`
 This is a template for what the generated replyto addresses should look like. The %s is replaced with a 5 letter/number hash by this program.
+
+`3831184516`
+This is the hash seed. It is the starting value for the hash that turns each recipient's email address into the
+5 character code that goes where the `%s` is in the template above. Pick any number you like and then keep it
+secret and never change it -- it is what makes your generated addresses yours. Two things to know:
+
+1. Changing the seed changes every address the program generates from then on. Old addresses you already handed
+out keep working (they are just mailboxes), but a recipient you emailed before and after the change will get two
+different codes, and the codes in your existing log files will no longer match what the program produces now. So
+decide on a seed once, up front, and write it down somewhere safe along with your match address.
+
+2. It must be a whole number that fits in an unsigned long, so on Windows that is `0` through `4294967295`.
+Anything bigger is silently clamped to `4294967295`, which means you would end up sharing a seed with everyone
+else who pasted in a too-big number. There is no benefit to a longer number, so just stay under the limit.
+
+Note that the code is only 5 hex digits (20 bits, so about a million possibilities) no matter what seed you use,
+which is why the collision warning below applies.
 
 `"g:/logs/"`
 This is an optional directory to write the logs into. Make sure it exists and has write, create, and modify rights. This is very handy
