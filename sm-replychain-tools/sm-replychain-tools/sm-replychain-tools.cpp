@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstring>
+#include <string.h>
 #include <cerrno>
 #include <sstream>
 #include <iomanip>
@@ -27,6 +28,17 @@
 #else
     const BOOL debugMode = false;
 #endif
+
+// One (match address, replacement mask, hash seed) set as given on the command line.
+// The command line can carry any number of these and each outgoing email is checked against
+// all of them, so you can run more than one identity through a single hook. The first set
+// whose address matches the email's "Reply-To:" wins.
+
+struct ReplyToConfig {
+    std::string   magicAddress;      // Address to look for in the "Reply-To:" header (bare, no <>)
+    std::string   replacementMask;   // ie "Josh Doe <new-%s@mydomain.com>" - must contain a %s
+    unsigned long hashSeed;          // Seed for MakeHash(). Same type as MakeHash's parameter.
+};
 
 std::string generateRandomNineDigitNumberWithLeadingZeros() {
     // Random number generator using the Mersenne Twister engine
@@ -149,28 +161,58 @@ void appendLogFileError( std::string logFilePathStr , std::string operation , st
     return;
 }
 
-// Returns 1 if a matching header line is found
+// Returns 1 if this line could possibly be a "Reply-To:" header holding one of our magic addresses.
 // We need this to preserve the optional "name" part of the "mailbox" field.
 // This is so ugly, but I think it is the fastest way when majority of lines do not match.
 // Reply to address should be ni brakets like <test@test.com>
+//
+// This is only a prescreen, so a false positive here is harmless (it just costs us a slower
+// second pass over a file we end up not changing) but a false negative would mean we silently
+// skip an email we were supposed to process. So this test is deliberately LOOSER than the real
+// one in findConfigForReplyToAddress() below - it is a superset of it and so cannot disagree with it.
+//
+// Note we test the tag once up front, so the cost per line does not grow with the number of
+// configs unless the line really is a replyto header.
 
-int checkLineReplyTo(const char* line, const char* magicReplyToAddress) {
+int checkLineReplyTo(const char* line, const std::vector<ReplyToConfig>& configs) {
 
-    const char* replyToPtr = strstr(line, "Reply-To:");
+    // A header field name always starts in column 0 (a "folded" continuation line starts with
+    // whitespace instead), and RFC5322 says field names are case insensitive - which is why this
+    // is a case insensitive compare against the front of the line rather than the strstr that
+    // used to be here. The authoritative test downstream matches the tag case insensitively too,
+    // so a mailer that writes "reply-to:" in lower case is no longer silently skipped.
 
-    if (!replyToPtr) return 0;
+    if (_strnicmp(line, "Reply-To:", 9) != 0) return 0;
 
-    const char* magicAddressPtr = strstr(line, magicReplyToAddress);
+    for (size_t nConfig = 0; nConfig < configs.size(); ++nConfig) {
 
-    if (!magicAddressPtr) return 0;
+        if (strstr(line, configs[nConfig].magicAddress.c_str())) return 1;
 
-    return 1;
+    }
+
+    return 0;
+
+}
+
+// Returns the index of the config whose magic address exactly matches the address we pulled out
+// of a "Reply-To:" header, or -1 if none of them do. This is the authoritative test - the
+// prescreen above is a superset of it, so anything that matches here was always caught up there.
+
+int findConfigForReplyToAddress(const std::vector<ReplyToConfig>& configs, const std::string& address) {
+
+    for (size_t nConfig = 0; nConfig < configs.size(); ++nConfig) {
+
+        if (address == configs[nConfig].magicAddress) return static_cast<int>(nConfig);
+
+    }
+
+    return -1;
 
 }
 
 // Had to break this out becuase c++ has no finally clause. :/
 
-int quickCheckOpenEmailFileForReplyTo(FILE* f, const char* magicReplyToAddress) {
+int quickCheckOpenEmailFileForReplyTo(FILE* f, const std::vector<ReplyToConfig>& configs) {
 
     const int maxLineLne = 1000;    // RFC5322
 
@@ -184,7 +226,7 @@ int quickCheckOpenEmailFileForReplyTo(FILE* f, const char* magicReplyToAddress) 
             return 0;    // Reached end of headers. Emperically I checked and 0x0d alwasy comes first in SmarterMail EML files. 
         }
 
-        if (checkLineReplyTo(line, magicReplyToAddress)) {
+        if (checkLineReplyTo(line, configs)) {
             return 1;
         }
     }
@@ -200,7 +242,7 @@ int quickCheckOpenEmailFileForReplyTo(FILE* f, const char* magicReplyToAddress) 
 
 // Returns 1 if we care about this file
 
-int quickCheckEmailFileForReplyTo( std::string logFilePathStr, const char* filePath, const char* magicReplyToAddress) {
+int quickCheckEmailFileForReplyTo( std::string logFilePathStr, const char* filePath, const std::vector<ReplyToConfig>& configs) {
 
     FILE* f;
 
@@ -214,7 +256,7 @@ int quickCheckEmailFileForReplyTo( std::string logFilePathStr, const char* fileP
 
     }
 
-    const int ret = quickCheckOpenEmailFileForReplyTo(f, magicReplyToAddress);
+    const int ret = quickCheckOpenEmailFileForReplyTo(f, configs);
 
     fclose(f); 
 
@@ -344,7 +386,7 @@ std::string extractEmailPart(std::string mailboxName) {
 
 // Function to transform EML file based on specified conditions
 void transformEMLFile( const std::string logFileName , const std::string logDir ,  const char* filePath, 
-    const char* magicReplytoEmailAddress, const char* newEmailAddressFmtString , unsigned int hashSeed) {
+    const std::vector<ReplyToConfig>& configs) {
     std::ifstream inFile(filePath);  // Open the original file for reading
     if (!inFile.is_open()) {
         appendLog(logFileName, "Error opening input file.", filePath);
@@ -364,7 +406,9 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
     }
 
     std::vector<std::string> toAddresses;
-    std::string replyToAddress;
+
+    // Index into configs of the config whose magic address we matched, or -1 if we have not matched one.
+    int matchedConfigIndex = -1;
 
     std::string line;
 
@@ -400,14 +444,25 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
 
             lastLineWasToTagFlag = false;       // Remember that the last line was a replyto (should never becuase replyto can only be one line, but who knows?)
 
-            if (replyToAddresses[0] == magicReplytoEmailAddress) {
+            const int configIndex = findConfigForReplyToAddress(configs, replyToAddresses[0]);
 
-                // We found a replyto line with our magic email address
-                replyToAddress = replyToAddresses[0];
+            if (configIndex >= 0) {
+
+                // We found a replyto line with one of our magic email addresses.
+                // Note that we do not write the replyto tag out to the new file (yet) - we write
+                // our generated replacement for it below, once we know the "to" address to hash.
+
+                matchedConfigIndex = configIndex;
+
+            } else {
+
+                // This is a real replyto header, just not one of ours. The prescreen above is
+                // deliberately loose so this does happen. Pass the line through untouched -
+                // dropping it would silently strip the sender's own replyto from the outgoing mail.
+
+                outFile << line << std::endl;
 
             }
-
-            // Note that we do not write the replyto tag out to the new file (yet)
 
         } else {
 
@@ -434,7 +489,7 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
     // Next we write the modified reply-to line into the outfile. 
     // We can do this here becuase the RFC says header order does not matter and we suppressed writing the orginal in code above. 
 
-    if (!replyToAddress.empty()) {
+    if (matchedConfigIndex >= 0) {
 
         // There was a matching replyto header
 
@@ -457,12 +512,15 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
 
         std::string toAddress = toAddresses[0];
 
-        std::string newReplyToMailboxStr = std::string(newEmailAddressFmtString);
+        // Record which of the configs fired. Handy once there is more than one of them.
+        appendLog(logFileName, "Matched config", configs[matchedConfigIndex].magicAddress);
+
+        std::string newReplyToMailboxStr = configs[matchedConfigIndex].replacementMask;
 
         // How can c++ not have a findAndReplce?
         size_t pos = newReplyToMailboxStr.find("%s");
         if (pos != std::string::npos) {
-            newReplyToMailboxStr.replace(pos, 2, MakeHash(toAddress,hashSeed)); // Replace %s with the return value of the hash
+            newReplyToMailboxStr.replace(pos, 2, MakeHash(toAddress, configs[matchedConfigIndex].hashSeed)); // Replace %s with the return value of the hash
         }
 
         line = "Reply-To: " + newReplyToMailboxStr; // Update the line with the new email
@@ -522,46 +580,147 @@ void transformEMLFile( const std::string logFileName , const std::string logDir 
 
 }
 
+// Sanity check one set of command line args before we touch any email.
+// Returns an empty string if the set looks usable, otherwise a human readable reason why not.
+
+std::string checkConfigArgs(const char* address, const char* mask, const char* seed) {
+
+    std::string addressStr(address);
+    std::string maskStr(mask);
+    std::string seedStr(seed);
+
+    // Note we want a dot in the domain as well as the "@". The regex we use to pull addresses back
+    // out of the headers insists on one, so something like "magic@localhost" would pass a bare "@"
+    // test here and then never be able to match anything - which would be baffling to debug.
+
+    const size_t atPos = addressStr.find('@');
+
+    if (atPos == std::string::npos) {
+        return "match address '" + addressStr + "' does not contain an '@'";
+    }
+
+    if (addressStr.find('.', atPos) == std::string::npos) {
+        return "match address '" + addressStr + "' has no '.' in its domain";
+    }
+
+    if (maskStr.find("%s") == std::string::npos) {
+        return "replacement mask '" + maskStr + "' does not contain a '%s' for the hash to go into";
+    }
+
+    // Note we only check that the seed is all digits and NOT that it fits in an unsigned long.
+    // See the README - seeds bigger than 4294967295 have always saturated to 4294967295 here, so
+    // rejecting them now would stop an existing install dead on its next email.
+
+    if (seedStr.empty() || seedStr.find_first_not_of("0123456789") != std::string::npos) {
+        return "seed '" + seedStr + "' is not a decimal number";
+    }
+
+    return "";
+
+}
+
 int main( int argc , char ** argv)
 {
-    if (argc!=5 && argc != 6) {
-        std::cout << "Expects 4 or 5 args:" << std::endl;
-        std::cout << " A special replyto address string(without <>) to search for and replace" << std::endl;
-        std::cout << " printf fmt string for new address (ie `joe <joe-%s>@joe.com) with %s where the hash goes" << std::endl;
-        std::cout << " path to the EML file to process" << std::endl;
-        std::cout << " seed for generating reply to hashes (unsigned long)" << std::endl;
-        std::cout << " optional path to a log directory (with trailing backslash). Must exist and must have create and append access if specified" << std::endl;
+    // The command line is...
+    //
+    //    exe <emlfile> <address> <mask> <seed> [<address> <mask> <seed>]... [<logdir>]
+    //
+    // ...so after the EML file path there are argc-2 args left over, and we can tell whether that
+    // optional trailing log directory is there just by counting them:
+    //
+    //    (argc-2) % 3 == 0  -> all address sets, no log dir
+    //    (argc-2) % 3 == 1  -> the LAST arg is the log dir, everything before it is address sets
+    //    (argc-2) % 3 == 2  -> somebody miscounted, show the usage
+    //
+    // This keeps the old fixed forms working exactly as they always have: argc==5 is one address
+    // set with no log dir, and argc==6 is one address set plus a log dir.
+
+    const int argsAfterFile = argc - 2;
+
+    // The argc test MUST stay first so the short circuit keeps argsAfterFile from going negative
+    // before we take the modulo. C++ says -1 % 3 == -1, which would sneak straight past the == 2.
+
+    if (argc < 5 || (argsAfterFile % 3) == 2) {
+        std::cout << "Expects an EML file path, then one or more (address, mask, seed) sets, then an optional log dir:" << std::endl;
+        std::cout << "  arg 1        : path to the EML file to process (SmarterMail passes %filepath here)" << std::endl;
+        std::cout << "  args 2,5,8...: a special replyto address string (without <>) to search for and replace" << std::endl;
+        std::cout << "  args 3,6,9...: printf fmt string for the new address (ie \"joe <joe-%s@joe.com>\") with %s where the hash goes" << std::endl;
+        std::cout << "  args 4,7,10..: seed for generating reply to hashes (decimal digits, unsigned long)" << std::endl;
+        std::cout << "  last arg     : optional path to a log directory (with trailing backslash). Must exist and must have create and append access if specified" << std::endl;
+        std::cout << "Example with two address sets:" << std::endl;
+        std::cout << "  sm-replace-replyto.exe %filepath \"work@example.com\" \"Josh <w-%s@example.com>\" 1234567 \"home@example.com\" \"Josh <h-%s@other.com>\" 7654321 \"g:/logs/\"" << std::endl;
         return 0; 
     }
     std::cout << "begin" << std::endl;
 
-    const char* fileName = argv[1];
-    const char* magicReplytoAddress = argv[2];
-    const char* replacementAddressFmtStr = argv[3];
-
-    unsigned long hashSeed = strtoul( argv[4] , NULL  , 10);
+    const char* fileName    = argv[1];
+    const int   configCount = argsAfterFile / 3;            // The integer divide drops the optional log dir
+    const bool  haveLogDir  = ((argsAfterFile % 3) == 1);
 
     // These default to empty
     std::string logDirNameStr;
     std::string logFileNameStr;
 
-    debugMsg(logFileNameStr, "Start. argc=", std::to_string( argc ) );
+    // Work out the log dir before we parse the address sets so that a bad set can actually be logged.
 
-    if (argc == 6) {
-        debugMsg(logFileNameStr, "Logging on.", "");
-
-        logDirNameStr = argv[5];
+    if (haveLogDir) {
+        logDirNameStr = argv[argc - 1];
         logFileNameStr = logDirNameStr + "log.txt";
     }
 
-    if (!quickCheckEmailFileForReplyTo(  logFileNameStr, fileName, magicReplytoAddress)) {
-        debugMsg(logFileNameStr, "No match.", magicReplytoAddress );
+    debugMsg(logFileNameStr, "Start. argc=", std::to_string( argc ) );
+
+    if (haveLogDir) {
+        debugMsg(logFileNameStr, "Logging on.", "");
+    }
+
+    std::vector<ReplyToConfig> configs;
+
+    for (int nConfig = 0; nConfig < configCount; ++nConfig) {
+
+        const char* addressArg = argv[2 + (nConfig * 3) + 0];
+        const char* maskArg    = argv[2 + (nConfig * 3) + 1];
+        const char* seedArg    = argv[2 + (nConfig * 3) + 2];
+
+        const std::string problem = checkConfigArgs(addressArg, maskArg, seedArg);
+
+        if (!problem.empty()) {
+
+            // Bad args. Complain loudly and bail out WITHOUT touching the email at all - it is much
+            // better to send the mail through unmodified than to rewrite it using a config we do
+            // not understand. Note we still exit 0 because it is not documented what SmarterMail
+            // does with a non zero exit code from the command line hook, and we do not want to risk
+            // it holding or failing the message. The log line is how you find out.
+
+            const std::string where = "BAD CONFIG in address set #" + std::to_string(nConfig + 1);
+
+            std::cerr << where << ": " << problem << std::endl;
+            appendLog(logFileNameStr, where, problem, fileName);
+
+            return 0;
+
+        }
+
+        ReplyToConfig config;
+
+        config.magicAddress    = addressArg;
+        config.replacementMask = maskArg;
+        config.hashSeed        = strtoul(seedArg, NULL, 10);
+
+        configs.push_back(config);
+
+    }
+
+    const std::string configCountStr = std::to_string(configs.size()) + " address set(s)";
+
+    if (!quickCheckEmailFileForReplyTo(  logFileNameStr, fileName, configs)) {
+        debugMsg(logFileNameStr, "No match.", configCountStr );
     } else {
 
         // If we get here, then we passed the preliminary quick check and now we can take our time to process the email.
-        debugMsg(logFileNameStr, "Match." , magicReplytoAddress);
+        debugMsg(logFileNameStr, "Match." , configCountStr);
         appendLog(logFileNameStr, "Process", fileName);
-        transformEMLFile( logFileNameStr , logDirNameStr , fileName , magicReplytoAddress, replacementAddressFmtStr , hashSeed);
+        transformEMLFile( logFileNameStr , logDirNameStr , fileName , configs);
 
     }
 
